@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#050506">
+  <meta name="description" content="Arquivo cronológico canônico da Terra Axial, de 9000 A.R. a 12 D.R.">
+  <title>TERRA AXIAL // Crônica do Eixo Sangrento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --black: #050506;
+  --black-soft: #0a0a0d;
+  --panel: rgba(13, 13, 17, .86);
+  --panel-solid: #0d0d11;
+  --red: #d41034;
+  --red-hot: #ff234f;
+  --red-dark: #4b0715;
+  --wine: #23050d;
+  --white: #f2eeef;
+  --muted: #a29a9d;
+  --steel: #645d60;
+  --line: rgba(212, 16, 52, .28);
+  --font-display: "Teko", sans-serif;
+  --font-body: "Oswald", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
+  --rail: 292px;
+  --ease: cubic-bezier(.2,.8,.2,1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--black); }
+body {
+  margin: 0;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 73% 8%, rgba(112,0,24,.18), transparent 30rem),
+    linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.01) 1px, transparent 1px),
+    var(--black);
+  background-size: auto, 64px 64px, 64px 64px, auto;
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9996;
+  pointer-events: none;
+  opacity: .22;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(0,0,0,.45) 3px 4px);
+  mix-blend-mode: multiply;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9995;
+  pointer-events: none;
+  box-shadow: inset 0 0 120px rgba(0,0,0,.92);
+}
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+::selection { color: #fff; background: var(--red); }
+:focus-visible { outline: 1px solid var(--red-hot); outline-offset: 4px; }
+
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: grid;
+  place-items: center;
+  background: #030304;
+  transition: opacity .65s var(--ease), visibility .65s;
+}
+.boot-screen.is-hidden { opacity: 0; visibility: hidden; }
+.boot-grid { position: absolute; inset: 0; opacity: .16; background-image: linear-gradient(var(--red) 1px, transparent 1px), linear-gradient(90deg,var(--red) 1px,transparent 1px); background-size: 48px 48px; transform: perspective(450px) rotateX(62deg) scale(1.7) translateY(20%); transform-origin: center bottom; }
+.boot-core { width: min(560px, calc(100vw - 48px)); text-align: center; position: relative; }
+.boot-kicker, .boot-core small { display: block; font: .72rem var(--font-mono); letter-spacing: .22em; color: var(--red-hot); }
+.boot-core strong { display: block; margin: 20px 0; font: 600 clamp(2rem,7vw,4.7rem)/.83 var(--font-display); letter-spacing: .04em; text-transform: uppercase; text-shadow: 0 0 35px rgba(212,16,52,.3); }
+.boot-progress { height: 2px; background: rgba(255,255,255,.08); overflow: hidden; margin: 24px 0 14px; }
+.boot-progress i { display: block; height: 100%; width: 0; background: var(--red-hot); box-shadow: 0 0 15px var(--red-hot); animation: boot 1.45s var(--ease) forwards; }
+@keyframes boot { to { width: 100%; } }
+
+.site-rail {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--rail);
+  z-index: 500;
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(10,10,13,.98), rgba(5,5,6,.99));
+  border-right: 1px solid rgba(212,16,52,.38);
+  box-shadow: 18px 0 70px rgba(0,0,0,.55), inset -20px 0 50px rgba(99,0,22,.05);
+}
+.rail-noise { position: absolute; inset: 0; opacity: .15; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E"); }
+.brand-lockup { position: relative; display: block; min-height: 126px; text-decoration: none; z-index: 1; }
+.brand-lockup img { display: block; width: min(100%, 224px); max-height: 95px; object-fit: contain; object-position: left center; filter: brightness(1.2) contrast(1.25) drop-shadow(0 0 12px rgba(212,16,52,.38)); transition: transform .4s var(--ease), filter .4s; }
+.brand-lockup:hover img { transform: translateX(4px) scale(1.02); filter: brightness(1.45) contrast(1.35) drop-shadow(0 0 20px rgba(255,35,79,.58)); }
+.brand-lockup span { display: block; margin-top: 12px; color: var(--steel); font: .66rem var(--font-mono); letter-spacing: .21em; }
+.holo-spine { position: relative; height: 48px; margin: 5px 0 4px 25px; border-left: 1px solid var(--red); }
+.holo-spine::before { content:""; position:absolute; left:-3px; top:0; width:5px; height:5px; background:var(--red-hot); box-shadow:0 0 14px var(--red-hot); }
+.holo-spine i { position:absolute; left:0; height:1px; background:linear-gradient(90deg,var(--red),transparent); }
+.holo-spine i:nth-child(1){top:13px;width:72px}.holo-spine i:nth-child(2){top:25px;width:43px}.holo-spine i:nth-child(3){top:37px;width:95px}
+.site-nav { display: grid; gap: 8px; position: relative; z-index: 1; }
+.site-nav a {
+  position: relative;
+  min-height: 49px;
+  padding: 11px 14px 10px 48px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid rgba(212,16,52,.1);
+  background: linear-gradient(90deg, rgba(212,16,52,.08), transparent 70%);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  transition: transform .25s var(--ease), color .25s, border-color .25s, background .25s;
+}
+.site-nav a::before { content:""; position:absolute; left:24px; top:-9px; bottom:-9px; width:1px; background:rgba(212,16,52,.23); }
+.site-nav a span { position:absolute; left:8px; color:#74404b; font:.63rem var(--font-mono); }
+.site-nav a b { font: 500 1.35rem/1 var(--font-display); letter-spacing: .08em; }
+.site-nav a:hover, .site-nav a.active { color:#fff; transform:translateX(8px); border-color:rgba(255,35,79,.7); background:linear-gradient(90deg,rgba(212,16,52,.26),rgba(212,16,52,.02)); text-shadow:0 0 14px rgba(255,35,79,.55); }
+.site-nav a.active::after { content:""; position:absolute; right:10px; width:5px; height:5px; background:var(--red-hot); box-shadow:0 0 12px var(--red-hot); }
+.rail-terminal { margin-top:auto; position:relative; z-index:1; border-top:1px solid var(--line); padding-top:18px; }
+.rail-terminal > div { display:flex; justify-content:space-between; gap:10px; padding:5px 0; font:.65rem var(--font-mono); letter-spacing:.08em; }
+.rail-terminal span { color:var(--steel); }.rail-terminal b{font-weight:400;color:#b9afb2}.rail-terminal .online{color:var(--red-hot)}
+.rail-terminal p { margin:15px 0 0; font:.57rem var(--font-mono); color:#665b5e; letter-spacing:.1em; }.rail-terminal p i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--red-hot);box-shadow:0 0 10px var(--red-hot);animation:pulse 1.3s infinite}
+@keyframes pulse { 50%{opacity:.25} }
+.mobile-menu-toggle, .rail-scrim { display:none; }
+
+.page-shell { margin-left: var(--rail); min-width: 0; }
+.hero { min-height: 100svh; position:relative; overflow:hidden; padding: clamp(110px,14vh,170px) clamp(28px,6vw,96px) 90px; display:grid; align-items:center; border-bottom:1px solid var(--line); isolation:isolate; }
+.hero-background { position:absolute; inset:0; z-index:-3; background: linear-gradient(90deg,rgba(5,5,6,.98) 0%,rgba(5,5,6,.88) 42%,rgba(5,5,6,.22) 100%), linear-gradient(180deg,transparent 55%,var(--black) 100%), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiPgo8ZGVmcz4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjMDkwOTBjIi8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiMwODA4MGEiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNiMjBkMmQiIHN0b3Atb3BhY2l0eT0iLjQyIi8+PC9saW5lYXJHcmFkaWVudD4KICA8cmFkaWFsR3JhZGllbnQgaWQ9InIiPjxzdG9wIHN0b3AtY29sb3I9IiNmZjMxNTkiIHN0b3Atb3BhY2l0eT0iLjI4Ii8+PHN0b3Agb2Zmc2V0PSIuNSIgc3RvcC1jb2xvcj0iI2IyMGQyZCIgc3RvcC1vcGFjaXR5PSIuMDgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPjwvcmFkaWFsR3JhZGllbnQ+CiAgPGZpbHRlciBpZD0iZ2xvdyI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMTIiIHJlc3VsdD0iYiIvPjxmZU1lcmdlPjxmZU1lcmdlTm9kZSBpbj0iYiIvPjxmZU1lcmdlTm9kZSBpbj0iU291cmNlR3JhcGhpYyIvPjwvZmVNZXJnZT48L2ZpbHRlcj4KICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNODAgMEgwVjgwIiBmaWxsPSJub25lIiBzdHJva2U9IiNiMjBkMmQiIHN0cm9rZS1vcGFjaXR5PSIuMTMiLz48L3BhdHRlcm4+CiAgPHBhdHRlcm4gaWQ9InNjYW4iIHdpZHRoPSI2IiBoZWlnaHQ9IjYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0wIDUuNUg2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIuMjgiLz48L3BhdHRlcm4+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0idXJsKCNnKSIvPjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjZ3JpZCkiLz4KPGNpcmNsZSBjeD0iMTEyMCIgY3k9IjQ0MCIgcj0iNTEwIiBmaWxsPSJ1cmwoI3IpIi8+CjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2IyMGQyZCIgb3BhY2l0eT0iLjU1Ij4KICA8Y2lyY2xlIGN4PSIxMTIwIiBjeT0iNDQwIiByPSIzMjAiLz48Y2lyY2xlIGN4PSIxMTIwIiBjeT0iNDQwIiByPSIyNDUiIHN0cm9rZS1kYXNoYXJyYXk9IjE4IDIwIi8+PGNpcmNsZSBjeD0iMTEyMCIgY3k9IjQ0MCIgcj0iMTMwIi8+CiAgPHBhdGggZD0iTTExMjAgNzBWODEwTTc1MCA0NDBIMTQ5ME04NTggMTc4bDUyNCA1MjRNMTM4MiAxNzhMODU4IDcwMiIgb3BhY2l0eT0iLjM1Ii8+CjwvZz4KPGcgZmlsdGVyPSJ1cmwoI2dsb3cpIiBmaWxsPSIjZmYzMTU5Ij48Y2lyY2xlIGN4PSIxMTIwIiBjeT0iMTIwIiByPSI2Ii8+PGNpcmNsZSBjeD0iMTM3NSIgY3k9IjQzOCIgcj0iNSIvPjxjaXJjbGUgY3g9IjEwMzgiIGN5PSI2ODQiIHI9IjQiLz48L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwMCAxNjUpIj4KICA8cGF0aCBkPSJNMCAwSDUyMEw1OTAgNzBWMzcwTDUzMCA0MzBIMFoiIGZpbGw9IiMwNTA1MDciIGZpbGwtb3BhY2l0eT0iLjQyIiBzdHJva2U9IiNiMjBkMmQiIHN0cm9rZS1vcGFjaXR5PSIuNCIvPgogIDx0ZXh0IHg9IjQyIiB5PSI5MiIgZmlsbD0iI2ZmMzE1OSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIyNCIgbGV0dGVyLXNwYWNpbmc9IjgiPk7DkyAvLyAwMDwvdGV4dD4KICA8dGV4dCB4PSIzOCIgeT0iMjAwIiBmaWxsPSIjZjRlZGVmIiBmb250LWZhbWlseT0iSW1wYWN0LCBzYW5zLXNlcmlmIiBmb250LXNpemU9Ijg2IiBsZXR0ZXItc3BhY2luZz0iMyI+RUlYTyBTQU5HUkVOVE88L3RleHQ+CiAgPHBhdGggZD0iTTQyIDI0OEg0MjAiIHN0cm9rZT0iI2ZmMzE1OSIgc3Ryb2tlLXdpZHRoPSIzIi8+PHBhdGggZD0iTTQyIDI3NEgyOTAiIHN0cm9rZT0iI2IyMGQyZCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iNDIiIHk9IjMzNiIgZmlsbD0iIzg1Nzc3YiIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxOCIgbGV0dGVyLXNwYWNpbmc9IjQiPkFSUVVJVk8gQVhJQUwgLy8gQUNFU1NPIFZJT0xBRE88L3RleHQ+CjwvZz4KPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0idXJsKCNzY2FuKSIgb3BhY2l0eT0iLjU1Ii8+CjxwYXRoIGQ9Ik0wIDk0OEgxMjMwTDEyODAgOTk4SDBaIiBmaWxsPSIjYjIwZDJkIiBmaWxsLW9wYWNpdHk9Ii4xOCIvPgo8L3N2Zz4=') center right/cover no-repeat; }
+.hero-background::after { content:""; position:absolute; inset:0; opacity:.22; background: repeating-linear-gradient(90deg,transparent 0 120px,rgba(212,16,52,.11) 121px,transparent 122px), repeating-linear-gradient(0deg,transparent 0 120px,rgba(212,16,52,.08) 121px,transparent 122px); mask-image:linear-gradient(90deg,transparent,black); }
+.hero-copy { max-width:820px; position:relative; z-index:2; }
+.eyebrow,.section-code { color:var(--red-hot); font:.72rem var(--font-mono); letter-spacing:.19em; text-transform:uppercase; }
+.eyebrow i { display:inline-block; width:26px; height:1px; margin:0 9px 3px 0; background:var(--red-hot); box-shadow:0 0 8px var(--red-hot); }
+.hero h1 { margin:25px 0 10px; font:600 clamp(4.7rem,10vw,10.5rem)/.73 var(--font-display); text-transform:uppercase; letter-spacing:-.025em; text-shadow:4px 5px 0 rgba(82,0,18,.65); }
+.hero h1 span { display:block; color:#968b8e; font-size:.43em; letter-spacing:.08em; margin-bottom:.14em; }
+.hero-range { margin:22px 0 26px; font:400 clamp(1rem,2vw,1.35rem) var(--font-mono); color:#71676a; letter-spacing:.08em; }.hero-range b{color:#ddd2d5;font-weight:400}
+.hero blockquote { max-width:720px; margin:0; padding:0 0 0 24px; border-left:2px solid var(--red); color:#d7ced0; font-size:clamp(1.08rem,1.8vw,1.35rem); font-weight:300; }
+.hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:38px; }
+.primary-action,.ghost-action { min-height:54px; border:1px solid var(--red); display:inline-flex; align-items:center; justify-content:space-between; gap:30px; padding:0 18px 0 22px; text-transform:uppercase; text-decoration:none; color:#fff; background:rgba(212,16,52,.14); clip-path:polygon(0 0,calc(100% - 13px) 0,100% 13px,100% 100%,13px 100%,0 calc(100% - 13px)); font:500 1.05rem var(--font-display); letter-spacing:.08em; cursor:pointer; transition:.3s var(--ease); }
+.primary-action:hover,.ghost-action:hover{background:var(--red);box-shadow:0 0 30px rgba(212,16,52,.25);transform:translateY(-2px)}
+.ghost-action{background:rgba(5,5,6,.5);border-color:rgba(255,255,255,.18)}
+.hero-telemetry { position:absolute; right:34px; top:30px; display:grid; grid-template-columns:repeat(3,minmax(120px,1fr)); gap:1px; background:rgba(212,16,52,.2); border:1px solid rgba(212,16,52,.2); z-index:3; }
+.hero-telemetry div { padding:12px 15px; background:rgba(5,5,6,.78); backdrop-filter:blur(8px); }.hero-telemetry span{display:block;color:#62575a;font:.56rem var(--font-mono);letter-spacing:.13em}.hero-telemetry strong{display:block;margin-top:5px;color:#c7bdc0;font:400 .66rem var(--font-mono);max-width:170px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-axis { position:absolute; right:8%; top:50%; width:min(39vw,560px); aspect-ratio:1; transform:translateY(-48%); z-index:0; opacity:.75; pointer-events:none; transition:transform .2s linear; }
+.axis-ring { position:absolute; border:1px solid rgba(212,16,52,.36); border-radius:50%; inset:0; box-shadow:inset 0 0 60px rgba(212,16,52,.04),0 0 35px rgba(212,16,52,.06); }
+.axis-ring::before,.axis-ring::after{content:"";position:absolute;left:50%;top:-5px;width:9px;height:9px;background:var(--red);box-shadow:0 0 15px var(--red)}
+.ring-a{animation:spin 28s linear infinite}.ring-b{inset:12%;border-style:dashed;animation:spinReverse 19s linear infinite}.ring-c{inset:26%;animation:spin 12s linear infinite}.axis-core{position:absolute;inset:39%;border:1px solid var(--red);transform:rotate(45deg);background:rgba(212,16,52,.05);box-shadow:0 0 40px rgba(212,16,52,.2),inset 0 0 30px rgba(212,16,52,.22);animation:core 3s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes spinReverse{to{transform:rotate(-360deg)}}@keyframes core{50%{transform:rotate(135deg) scale(.82);opacity:.55}}
+.scroll-signal{position:absolute;right:38px;bottom:34px;display:flex;align-items:center;gap:12px;color:#6f6366;text-decoration:none;font:.6rem var(--font-mono);letter-spacing:.15em;writing-mode:vertical-rl}.scroll-signal i{height:55px;width:1px;background:linear-gradient(var(--red),transparent);position:relative}.scroll-signal i::after{content:"";position:absolute;top:0;left:-2px;width:5px;height:5px;background:var(--red-hot);box-shadow:0 0 8px var(--red-hot);animation:scrollDot 2s infinite}@keyframes scrollDot{to{top:50px;opacity:0}}
+
+.section { padding: clamp(80px,10vw,145px) clamp(24px,5vw,80px); }
+.section-heading { display:grid; grid-template-columns:minmax(320px,.9fr) minmax(280px,.6fr); gap:50px; align-items:end; margin-bottom:48px; }
+.section-heading h2,.conclusion h2 { margin:8px 0 0; font:600 clamp(3.1rem,6vw,6.4rem)/.84 var(--font-display); text-transform:uppercase; letter-spacing:.01em; }
+.section-heading p { margin:0; color:#9b9194; font-size:1.08rem; max-width:610px; }
+.divisions { background:linear-gradient(180deg,#070708,#0b0b0e); border-bottom:1px solid rgba(255,255,255,.04); }
+.book-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.book-card { position:relative; min-height:390px; padding:0; border:1px solid rgba(212,16,52,.18); color:#fff; background:#09090b; overflow:hidden; text-align:left; cursor:pointer; clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px)); transition:transform .45s var(--ease),border-color .3s,box-shadow .45s; }
+.book-card::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 20%,rgba(5,5,6,.15) 44%,rgba(5,5,6,.98) 88%); }
+.book-card img { width:100%; height:100%; position:absolute; inset:0; object-fit:cover; filter:saturate(.4) contrast(1.15); transition:transform .75s var(--ease),filter .5s; }
+.book-card:hover { transform:translateY(-10px); border-color:var(--red-hot); box-shadow:0 22px 70px rgba(0,0,0,.42),0 0 24px rgba(212,16,52,.12); }.book-card:hover img{transform:scale(1.08);filter:saturate(.8) contrast(1.25)}
+.book-card-content { position:absolute; z-index:2; left:22px; right:22px; bottom:22px; }
+.book-card-number { color:var(--red-hot); font:.63rem var(--font-mono); letter-spacing:.16em; }.book-card h3{margin:8px 0 7px;font:600 2.25rem/.9 var(--font-display);text-transform:uppercase}.book-card p{margin:0;color:#aca1a4;font-size:.9rem;line-height:1.4}.book-card-count{position:absolute;z-index:3;top:18px;right:18px;font:.62rem var(--font-mono);color:#c7bcc0;border:1px solid rgba(255,255,255,.16);padding:6px 8px;background:rgba(5,5,6,.58);backdrop-filter:blur(8px)}
+.book-card .book-open{display:flex;align-items:center;gap:8px;margin-top:16px;color:#fff;font:500 .9rem var(--font-display);letter-spacing:.08em;text-transform:uppercase}.book-open i{width:22px;height:1px;background:var(--red);transition:width .3s}.book-card:hover .book-open i{width:45px}
+
+.archive-section { background:radial-gradient(circle at 82% 25%,rgba(70,0,18,.16),transparent 27rem),var(--black); }
+.command-bar { position:sticky; top:12px; z-index:80; display:grid; grid-template-columns:auto minmax(220px,1fr) auto auto; gap:8px; padding:9px; margin-bottom:16px; border:1px solid rgba(212,16,52,.2); background:rgba(7,7,9,.88); backdrop-filter:blur(18px); box-shadow:0 12px 45px rgba(0,0,0,.32); }
+.index-toggle,.motion-toggle { border:1px solid rgba(255,255,255,.1); background:#0d0d11;color:#bcb1b4;min-width:78px;padding:0 13px;cursor:pointer;font:400 .68rem var(--font-mono);letter-spacing:.08em }.index-toggle{display:none}.index-toggle:hover,.motion-toggle:hover{border-color:var(--red);color:#fff}.motion-toggle[aria-pressed="true"] span{color:var(--red-hot)}
+.search-field { position:relative; min-height:51px; display:flex; align-items:center; border:1px solid rgba(255,255,255,.1); background:#0d0d11; }
+.search-field span { position:absolute; top:6px; left:13px; color:#5f5659; font:.52rem var(--font-mono); letter-spacing:.13em; }
+.search-field input { width:100%; height:100%; padding:17px 42px 3px 13px; color:#fff; border:0; outline:0; background:transparent; font:400 .82rem var(--font-mono); }.search-field input::placeholder{color:#52494c}.search-field kbd{position:absolute;right:12px;color:#665b5e}
+.era-filter { display:flex; gap:5px; }.era-filter button{border:1px solid rgba(255,255,255,.1);background:#0d0d11;color:#736a6c;padding:0 12px;cursor:pointer;font:400 .62rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;transition:.2s}.era-filter button:hover,.era-filter button.active{color:#fff;border-color:var(--red);background:rgba(212,16,52,.13)}
+.archive-interface { min-height:720px; display:grid; grid-template-columns:minmax(220px,270px) minmax(0,1fr) 190px; gap:12px; perspective:1300px; }
+.record-index,.record-stage,.telemetry-panel { border:1px solid rgba(255,255,255,.07); background:linear-gradient(180deg,rgba(15,15,19,.96),rgba(8,8,10,.98)); }
+.record-index { min-height:0; display:flex; flex-direction:column; overflow:hidden; }
+.index-header{height:64px;padding:12px 13px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(212,16,52,.16);background:rgba(212,16,52,.035)}.index-header span{display:block;color:#62575a;font:.53rem var(--font-mono);letter-spacing:.1em}.index-header strong{font:500 1.25rem var(--font-display);color:var(--red-hot)}.index-header button{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+.index-list { overflow:auto; padding:8px; scrollbar-width:thin; scrollbar-color:var(--red-dark) transparent; }
+.index-group-label{padding:15px 8px 7px;color:#6e6265;font:.57rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;position:sticky;top:0;background:#0d0d11;z-index:2}.index-item{width:100%;display:grid;grid-template-columns:42px 1fr;gap:9px;align-items:center;padding:10px 8px;border:0;border-left:1px solid transparent;background:transparent;color:#8d8285;text-align:left;cursor:pointer;transition:.2s}.index-item:hover,.index-item.active{color:#fff;background:linear-gradient(90deg,rgba(212,16,52,.13),transparent);border-left-color:var(--red-hot)}.index-item.active{box-shadow:inset 3px 0 12px rgba(212,16,52,.08)}.index-code{font:.56rem var(--font-mono);color:#5c5255}.index-item.active .index-code{color:var(--red-hot)}.index-name{font:500 .94rem/1.1 var(--font-display);text-transform:uppercase;letter-spacing:.03em}.index-footer{margin-top:auto;padding:11px 13px;border-top:1px solid rgba(255,255,255,.05);color:#53494c;font:.53rem var(--font-mono);letter-spacing:.08em}.index-footer i{display:inline-block;width:5px;height:5px;background:var(--red);margin-right:5px}
+.record-stage { position:relative; min-width:0; padding:18px clamp(20px,3vw,46px) 26px; overflow:hidden; transform-style:preserve-3d; transition:opacity .18s,transform .28s var(--ease),filter .18s; }
+.record-stage.is-switching{opacity:.08;transform:rotateY(-7deg) translateX(20px) scale(.98);filter:blur(4px)}
+.stage-corners i{position:absolute;width:18px;height:18px;border-color:rgba(212,16,52,.42);border-style:solid;pointer-events:none}.stage-corners i:nth-child(1){left:8px;top:8px;border-width:1px 0 0 1px}.stage-corners i:nth-child(2){right:8px;top:8px;border-width:1px 1px 0 0}.stage-corners i:nth-child(3){right:8px;bottom:8px;border-width:0 1px 1px 0}.stage-corners i:nth-child(4){left:8px;bottom:8px;border-width:0 0 1px 1px}
+.record-topline{height:32px;display:flex;justify-content:space-between;color:#6f6467;font:.58rem var(--font-mono);letter-spacing:.11em}.record-topline span:first-child{color:var(--red-hot)}
+.record-visual{height:245px;margin:0 0 27px;position:relative;overflow:hidden;border:1px solid rgba(212,16,52,.16);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%)}.record-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,6,.1),rgba(5,5,6,.66)),linear-gradient(180deg,transparent,rgba(5,5,6,.82));}.record-visual img{width:100%;height:100%;object-fit:cover;transition:transform 6s linear}.record-stage:not(.is-switching) .record-visual img{transform:scale(1.08)}.record-visual figcaption{position:absolute;z-index:2;left:20px;bottom:15px;display:flex;align-items:end;gap:11px}.record-visual figcaption span{color:var(--red-hot);font:.58rem var(--font-mono);letter-spacing:.12em}.record-visual figcaption b{font:500 1.45rem var(--font-display);letter-spacing:.05em;text-transform:uppercase}
+.record-heading span{color:#776b6e;font:.64rem var(--font-mono);letter-spacing:.13em}.record-heading h3{margin:10px 0 24px;max-width:900px;font:600 clamp(3rem,5vw,5.8rem)/.82 var(--font-display);text-transform:uppercase;letter-spacing:.005em;text-wrap:balance}
+.record-copy{position:relative;max-width:880px;color:#c6bdc0;font-size:1.05rem}.record-copy p{margin:0 0 1.25em;padding-left:18px;border-left:1px solid rgba(212,16,52,.12);animation:paragraphIn .55s var(--ease) both}.record-copy p:first-child{font-size:1.15rem;color:#e4dcde}.record-copy p::first-letter{color:#fff}.record-copy p.is-locked{display:none}@keyframes paragraphIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.layer-control{margin-top:24px;padding:13px 0 0;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;gap:15px}.layer-control>div span{display:block;color:#5f5558;font:.5rem var(--font-mono);letter-spacing:.11em}.layer-control>div b{font:400 .62rem var(--font-mono);color:#a89da0}.layer-control button{border:1px solid rgba(212,16,52,.28);background:rgba(212,16,52,.07);color:#fff;padding:10px 12px;cursor:pointer;font:400 .64rem var(--font-mono);letter-spacing:.08em}.layer-control button:hover{border-color:var(--red-hot);background:rgba(212,16,52,.16)}
+.record-navigation{display:grid;grid-template-columns:auto minmax(80px,1fr) auto;gap:16px;align-items:center;margin-top:34px;padding-top:17px;border-top:1px solid rgba(255,255,255,.06)}.record-navigation button{border:0;background:transparent;color:#8e8386;display:flex;align-items:center;gap:10px;cursor:pointer;text-transform:uppercase;font:500 .83rem var(--font-display);letter-spacing:.05em}.record-navigation button:hover{color:#fff}.record-navigation button:disabled{opacity:.25;cursor:not-allowed}.record-progress{height:2px;background:#211a1c;overflow:hidden}.record-progress i{display:block;height:100%;width:0;background:var(--red-hot);box-shadow:0 0 10px var(--red);transition:width .45s var(--ease)}
+.telemetry-panel{padding:15px;min-width:0}.telemetry-title{color:#716568;font:.58rem var(--font-mono);letter-spacing:.13em}.telemetry-title i{display:inline-block;width:5px;height:5px;background:var(--red-hot);box-shadow:0 0 8px var(--red-hot);margin-right:7px}.radar{position:relative;margin:24px auto;width:118px;aspect-ratio:1;border:1px solid rgba(212,16,52,.3);border-radius:50%;background:radial-gradient(circle,transparent 0 23%,rgba(212,16,52,.14) 24% 25%,transparent 26% 49%,rgba(212,16,52,.13) 50% 51%,transparent 52%),linear-gradient(90deg,transparent 49%,rgba(212,16,52,.25) 50%,transparent 51%),linear-gradient(transparent 49%,rgba(212,16,52,.25) 50%,transparent 51%)}.radar::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(212,16,52,.28),transparent 24%);animation:spin 4s linear infinite}.radar b{position:absolute;left:34%;top:61%;width:5px;height:5px;border-radius:50%;background:var(--red-hot);box-shadow:0 0 12px var(--red-hot)}
+.telemetry-panel dl{margin:0}.telemetry-panel dl div{padding:10px 0;border-top:1px solid rgba(255,255,255,.05)}.telemetry-panel dt{color:#554b4e;font:.5rem var(--font-mono);letter-spacing:.1em}.telemetry-panel dd{margin:5px 0 0;color:#b4a9ac;font:400 .62rem var(--font-mono);word-break:break-word}.key-help{margin-top:24px;padding-top:12px;border-top:1px solid var(--line);color:#5f5558;font:.52rem var(--font-mono);letter-spacing:.08em}.key-help p{margin:8px 0}.key-help kbd,.search-field kbd{font:400 .56rem var(--font-mono);border:1px solid rgba(255,255,255,.12);border-bottom-color:rgba(255,255,255,.24);padding:2px 5px;background:#111115;color:#887d80}.empty-state{text-align:center;padding:70px;color:#8c8083;border:1px dashed rgba(212,16,52,.25)}
+
+.conclusion { display:grid; grid-template-columns:minmax(280px,.65fr) minmax(0,1fr); gap:clamp(35px,7vw,100px); padding:clamp(90px,12vw,170px) clamp(24px,6vw,100px); background:linear-gradient(90deg,#09090b,#060607); border-top:1px solid var(--line); }
+.conclusion-visual{min-height:620px;position:relative;display:flex;align-items:flex-end;padding:28px;overflow:hidden;background:url('https://i.imgur.com/FG0C553.png') center center/cover no-repeat;border:1px solid rgba(212,16,52,.18);clip-path:polygon(0 0,calc(100% - 25px) 0,100% 25px,100% 100%,25px 100%,0 calc(100% - 25px))}.conclusion-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(5,5,6,.95))}.conclusion-visual span{position:relative;z-index:1;font:600 clamp(3rem,5vw,6rem)/.78 var(--font-display);text-transform:uppercase;color:#fff;text-shadow:4px 4px 0 #490715}
+.conclusion-copy h2{margin-bottom:35px}.conclusion-copy p{max-width:830px;color:#b8aeb1;font-size:1.04rem;margin:0 0 1.15em}.conclusion-copy p:last-of-type{font-size:1.25rem;color:#eee5e7;border-left:2px solid var(--red);padding-left:19px}.signature{display:flex;align-items:center;gap:14px;margin-top:32px;color:#756a6d;font:.62rem var(--font-mono);letter-spacing:.13em}.signature i{width:60px;height:1px;background:var(--red)}
+.site-footer{min-height:75px;padding:20px clamp(24px,5vw,70px);display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid rgba(212,16,52,.28);background:#050506;color:#5e5457;font:.58rem var(--font-mono);letter-spacing:.11em}.site-footer a{text-decoration:none;color:#95898c}.site-footer a:hover{color:#fff}
+
+.continuity-dialog{width:min(900px,calc(100vw - 30px));max-height:min(84vh,850px);padding:0;border:1px solid var(--red);background:#08080a;color:#fff;box-shadow:0 35px 120px rgba(0,0,0,.8),0 0 60px rgba(212,16,52,.13)}.continuity-dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(8px)}.dialog-shell{position:relative}.dialog-topline,.dialog-footer{padding:14px 18px;background:rgba(212,16,52,.09);font:.62rem var(--font-mono);letter-spacing:.13em;color:var(--red-hot);border-bottom:1px solid rgba(212,16,52,.22)}.dialog-topline{display:flex;justify-content:space-between;align-items:center}.dialog-topline button{border:0;background:none;color:#fff;font-size:1.8rem;cursor:pointer}.dialog-body{padding:clamp(24px,5vw,55px);max-height:65vh;overflow:auto}.dialog-body p{margin:0 0 1.2em;color:#c5bbbe;font-size:1.05rem}.dialog-footer{border:0;border-top:1px solid rgba(212,16,52,.22);color:#63585b}
+.toast{position:fixed;right:22px;bottom:22px;z-index:1000;transform:translateY(20px);opacity:0;pointer-events:none;background:#111116;border:1px solid var(--red);padding:10px 14px;color:#fff;font:.62rem var(--font-mono);letter-spacing:.08em;transition:.3s}.toast.show{opacity:1;transform:none}
+.noscript{position:fixed;inset:auto 20px 20px calc(var(--rail) + 20px);z-index:10000;padding:15px;background:#300812;border:1px solid var(--red)}
+.reveal-on-scroll{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal-on-scroll.is-visible{opacity:1;transform:none}
+
+body.reduce-motion *,body.reduce-motion *::before,body.reduce-motion *::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
+
+@media (max-width: 1320px){
+  .book-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.book-card{min-height:340px}
+  .archive-interface{grid-template-columns:240px minmax(0,1fr)}.telemetry-panel{display:none}
+}
+@media (max-width: 1040px){
+  :root{--rail:250px}.site-rail{padding-left:18px;padding-right:18px}.hero-axis{right:-7%;opacity:.45}.hero-telemetry{display:none}
+  .command-bar{grid-template-columns:auto minmax(190px,1fr) auto}.motion-toggle{display:none}.era-filter button{padding:0 8px}
+  .archive-interface{grid-template-columns:220px minmax(0,1fr)}
+}
+@media (max-width: 860px){
+  :root{--rail:286px}.page-shell{margin-left:0}.site-rail{transform:translateX(-105%);transition:transform .42s var(--ease);box-shadow:35px 0 90px rgba(0,0,0,.82)}body.menu-open .site-rail{transform:none}.rail-scrim{display:block;position:fixed;inset:0;z-index:490;background:rgba(0,0,0,.72);opacity:0;visibility:hidden;transition:.35s}body.menu-open .rail-scrim{opacity:1;visibility:visible}
+  .mobile-menu-toggle{display:flex;position:fixed;right:14px;top:14px;z-index:700;width:62px;height:51px;padding:10px 11px;border:1px solid rgba(212,16,52,.5);background:rgba(7,7,9,.9);backdrop-filter:blur(10px);flex-direction:column;gap:5px;color:#fff;cursor:pointer}.mobile-menu-toggle span{display:block;width:22px;height:1px;background:#fff}.mobile-menu-toggle b{position:absolute;right:7px;bottom:5px;font:400 .42rem var(--font-mono);color:#75696c}
+  .hero{padding-top:130px}.hero-axis{width:80vw;right:-30%;top:45%}.scroll-signal{display:none}
+  .section-heading{grid-template-columns:1fr;gap:20px}
+  .command-bar{top:8px;grid-template-columns:auto minmax(0,1fr) auto}.index-toggle{display:block}.era-filter{grid-column:1/-1;overflow:auto;min-height:42px}.era-filter button{min-width:max-content}.archive-interface{display:block;min-height:0}.record-index{position:fixed;z-index:650;left:10px;top:75px;bottom:10px;width:min(330px,calc(100vw - 20px));transform:translateX(calc(-100% - 20px));transition:transform .35s var(--ease);box-shadow:30px 0 80px rgba(0,0,0,.75)}.record-index.open{transform:none}.index-header button{display:block}.record-stage{min-height:650px}.index-list{height:100%}
+  .conclusion{grid-template-columns:1fr}.conclusion-visual{min-height:420px}
+}
+@media (max-width: 620px){
+  .hero{min-height:900px;padding-left:22px;padding-right:22px}.hero h1{font-size:clamp(4.2rem,22vw,7rem)}.hero-actions{display:grid}.primary-action,.ghost-action{width:100%}.hero-axis{width:105vw;right:-58%;opacity:.35}.eyebrow{max-width:280px;line-height:1.5}.hero blockquote{font-size:1.02rem}
+  .section{padding-left:18px;padding-right:18px}.section-heading h2,.conclusion h2{font-size:3.5rem}.book-grid{grid-template-columns:1fr}.book-card{min-height:330px}
+  .command-bar{margin-left:-10px;margin-right:-10px}.index-toggle{min-width:52px}.index-toggle span{display:none}.search-field span{display:none}.search-field input{padding-top:3px}.motion-toggle{display:none}
+  .record-stage{padding:13px 17px 20px}.record-visual{height:190px}.record-heading h3{font-size:3.25rem}.record-copy{font-size:1rem}.layer-control{align-items:flex-start;flex-direction:column}.layer-control button{width:100%}.record-navigation{grid-template-columns:auto 1fr auto}.record-navigation button span{display:none}
+  .conclusion{padding-left:18px;padding-right:18px}.conclusion-visual{min-height:330px}.site-footer{flex-direction:column;text-align:center}.site-footer span:last-child{display:none}
+}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.boot-screen{display:none}.reveal-on-scroll{opacity:1;transform:none}}
+
+/* =========================================
+   AJUSTE 02 // LEITURA JUSTIFICADA + SINAL ANALÓGICO
+========================================= */
+:root {
+  --analog-text-shadow:
+    .38px 0 rgba(255, 35, 79, .34),
+    -.38px 0 rgba(84, 174, 255, .11),
+    0 0 1px rgba(255, 255, 255, .08),
+    0 0 7px rgba(212, 16, 52, .045);
+}
+
+/* O sinal é herdado por toda a tipografia da interface. */
+body {
+  text-shadow: var(--analog-text-shadow);
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  animation: axialTextSignal 8s steps(2, end) infinite;
+}
+
+body :where(
+  p, blockquote, span, small, strong, b, em, i,
+  a, button, label, input, kbd, dt, dd, figcaption,
+  h1, h2, h3, h4, h5, h6
+) {
+  text-shadow: var(--analog-text-shadow);
+}
+
+input::placeholder {
+  color: #6d6366;
+  opacity: .82;
+  text-shadow: var(--analog-text-shadow);
+}
+
+/* Títulos mantêm a sombra estrutural e recebem aberração cromática analógica. */
+.hero h1 {
+  text-shadow:
+    4px 5px 0 rgba(82, 0, 18, .65),
+    1px 0 rgba(255, 35, 79, .42),
+    -1px 0 rgba(84, 174, 255, .13),
+    0 0 14px rgba(212, 16, 52, .09);
+}
+
+.conclusion-visual span {
+  text-shadow:
+    4px 4px 0 #490715,
+    1px 0 rgba(255, 35, 79, .42),
+    -1px 0 rgba(84, 174, 255, .13),
+    0 0 12px rgba(212, 16, 52, .1);
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  text-shadow:
+    .55px 0 rgba(255, 35, 79, .72),
+    -.55px 0 rgba(84, 174, 255, .18),
+    0 0 14px rgba(255, 35, 79, .55);
+}
+
+/* Justificação sem divisão silábica: todas as palavras permanecem inteiras. */
+.hero blockquote,
+.section-heading > p,
+.book-card p,
+.record-copy,
+.record-copy p,
+.conclusion-copy p,
+.dialog-body p,
+.empty-state {
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  overflow-wrap: normal;
+  word-wrap: normal;
+  word-break: normal;
+  text-wrap: pretty;
+}
+
+/* Ritmo de leitura dos cards e arquivos extensos. */
+.book-card p {
+  line-height: 1.55;
+  word-spacing: .015em;
+}
+
+.record-copy {
+  line-height: 1.78;
+  letter-spacing: .006em;
+}
+
+.record-copy p,
+.conclusion-copy p,
+.dialog-body p {
+  word-spacing: .025em;
+}
+
+.record-copy p {
+  max-width: 78ch;
+}
+
+.dialog-body p,
+.conclusion-copy p {
+  max-width: 82ch;
+}
+
+@keyframes axialTextSignal {
+  0%, 91%, 100% {
+    text-shadow: var(--analog-text-shadow);
+  }
+  92% {
+    text-shadow:
+      .7px 0 rgba(255, 35, 79, .4),
+      -.15px 0 rgba(84, 174, 255, .08),
+      0 0 2px rgba(255, 255, 255, .07);
+  }
+  93% {
+    text-shadow:
+      .18px 0 rgba(255, 35, 79, .26),
+      -.62px 0 rgba(84, 174, 255, .14),
+      0 0 1px rgba(255, 255, 255, .06);
+  }
+}
+
+body.reduce-motion {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+}
+
+@media (max-width: 560px) {
+  .hero blockquote,
+  .section-heading > p,
+  .book-card p,
+  .record-copy,
+  .record-copy p,
+  .conclusion-copy p,
+  .dialog-body p {
+    hyphens: none;
+    -webkit-hyphens: none;
+    overflow-wrap: normal;
+    word-break: normal;
+    word-spacing: .005em;
+    letter-spacing: 0;
+  }
+
+  .record-copy {
+    line-height: 1.72;
+  }
+}
+/* FIM AJUSTE 02 */
+</style>
+</head>
+<body>
+  <div class="boot-screen" id="bootScreen" aria-hidden="true">
+    <div class="boot-grid"></div>
+    <div class="boot-core">
+      <span class="boot-kicker">H.A.M.M.E.R. // NÓ CRONOLÓGICO</span>
+      <strong>DESCRIPTOGRAFANDO<br>ARQUIVO OBSIDIANA</strong>
+      <div class="boot-progress"><i></i></div>
+      <small>PERMISSÃO IRREGULAR DETECTADA</small>
+    </div>
+  </div>
+
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-controls="siteRail" aria-expanded="false">
+    <span></span><span></span><span></span>
+    <b>MENU</b>
+  </button>
+
+  <aside class="site-rail" id="siteRail">
+    <div class="rail-noise"></div>
+    <a class="brand-lockup" href="https://universoaxial.tumblr.com/home" target="_top" aria-label="Terra Axial — página inicial">
+      <img src="https://i.imgur.com/Rrok7Tf.png" onerror="this.onerror=null;this.src='https://i.imgur.com/5UEkjjS.png'" alt="Logo Terra Axial">
+      <span>ARQUIVO // CRONOLOGIA</span>
+    </a>
+
+    <div class="holo-spine" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="https://universoaxial.tumblr.com/home" target="_top"><span>01</span><b>Início</b></a>
+      <a href="https://universoaxial.tumblr.com/cronologia" target="_top" class="active" aria-current="page"><span>02</span><b>Cronologia</b></a>
+      <a href="https://universoaxial.tumblr.com/ambientacao" target="_top"><span>03</span><b>Ambientação</b></a>
+      <a href="https://universoaxial.tumblr.com/pacotes" target="_top"><span>04</span><b>Pacotes</b></a>
+      <a href="https://universoaxial.tumblr.com/legados" target="_top"><span>05</span><b>Legados</b></a>
+      <a href="https://universoaxial.tumblr.com/extras" target="_top"><span>06</span><b>Extras</b></a>
+    </nav>
+
+    <div class="rail-terminal">
+      <div><span>SETOR</span><b>MEMÓRIA</b></div>
+      <div><span>STATUS</span><b class="online">VIOLADO</b></div>
+      <div><span>ANO</span><b>12 D.R.</b></div>
+      <p><i></i> TRANSMISSÃO CLANDESTINA</p>
+    </div>
+  </aside>
+
+  <div class="rail-scrim" id="railScrim" aria-hidden="true"></div>
+
+  <main class="page-shell">
+    <section class="hero" id="topo">
+      <div class="hero-background" aria-hidden="true"></div>
+      <div class="hero-axis" id="heroAxis" aria-hidden="true">
+        <div class="axis-ring ring-a"></div>
+        <div class="axis-ring ring-b"></div>
+        <div class="axis-ring ring-c"></div>
+        <div class="axis-core"></div>
+      </div>
+
+      <div class="hero-copy reveal-on-scroll">
+        <div class="eyebrow"><i></i> ARQUIVO OBSIDIANA // HISTÓRIA NÃO AUTORIZADA</div>
+        <h1><span>A Crônica do</span>Eixo Sangrento</h1>
+        <p class="hero-range">CRONOLOGIA OFICIAL <b>9000 A.R. — 12 D.R.</b></p>
+        <blockquote id="heroQuote"></blockquote>
+        <div class="hero-actions">
+          <a href="#divisoes" class="primary-action"><span>Acessar registros</span><i>↘</i></a>
+          <button class="ghost-action" id="continuityOpen" type="button"><span>Ler nota de continuidade</span><i>+</i></button>
+        </div>
+      </div>
+
+      <div class="hero-telemetry" aria-label="Metadados do arquivo">
+        <div><span>ATUALIDADE</span><strong id="metaCurrent"></strong></div>
+        <div><span>CORTE NARRATIVO</span><strong id="metaCut"></strong></div>
+        <div><span>CLASSIFICAÇÃO</span><strong id="metaClass"></strong></div>
+      </div>
+
+      <a class="scroll-signal" href="#divisoes" aria-label="Avançar para divisões do arquivo"><span>ROLAR</span><i></i></a>
+    </section>
+
+    <section class="section divisions" id="divisoes">
+      <header class="section-heading reveal-on-scroll">
+        <div>
+          <span class="section-code">ÍNDICE // 04 VOLUMES</span>
+          <h2>Divisões do Arquivo</h2>
+        </div>
+        <p>A cronologia foi repartida em volumes de consulta. Selecione uma era para carregar seus registros no terminal.</p>
+      </header>
+      <div class="book-grid" id="bookGrid"></div>
+    </section>
+
+    <section class="section archive-section" id="arquivo">
+      <header class="section-heading reveal-on-scroll">
+        <div>
+          <span class="section-code">TERMINAL // LEITURA PROGRESSIVA</span>
+          <h2>Arquivo Cronológico</h2>
+        </div>
+        <p>Os registros são revelados em camadas para preservar ritmo, legibilidade e continuidade em telas grandes ou móveis.</p>
+      </header>
+
+      <div class="command-bar reveal-on-scroll">
+        <button class="index-toggle" id="indexToggle" type="button" aria-controls="recordIndex" aria-expanded="false">☰ <span>Índice</span></button>
+        <label class="search-field">
+          <span>BUSCAR NO ARQUIVO</span>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Nome, evento, personagem...">
+          <kbd>/</kbd>
+        </label>
+        <div class="era-filter" id="eraFilter" role="group" aria-label="Filtrar por volume"></div>
+        <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false" title="Reduzir animações">FX <span>ON</span></button>
+      </div>
+
+      <div class="archive-interface reveal-on-scroll">
+        <aside class="record-index" id="recordIndex" aria-label="Índice de registros">
+          <div class="index-header">
+            <div><span>ARQUIVOS LOCALIZADOS</span><strong id="resultCount">00</strong></div>
+            <button id="indexClose" type="button" aria-label="Fechar índice">×</button>
+          </div>
+          <div class="index-list" id="indexList"></div>
+          <div class="index-footer"><i></i> DADOS PARCIALMENTE CORROMPIDOS</div>
+        </aside>
+
+        <article class="record-stage" id="recordStage" tabindex="-1" aria-live="polite">
+          <div class="stage-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div class="record-topline">
+            <span id="recordStatus"></span>
+            <span id="recordSequence"></span>
+          </div>
+
+          <figure class="record-visual" id="recordVisual">
+            <img id="recordImage" src="https://i.imgur.com/0QDCRQs.png" alt="" decoding="async" referrerpolicy="no-referrer">
+            <figcaption>
+              <span id="recordEra"></span>
+              <b id="recordLabel"></b>
+            </figcaption>
+          </figure>
+
+          <div class="record-heading">
+            <span id="recordBook"></span>
+            <h3 id="recordTitle"></h3>
+          </div>
+
+          <div class="record-copy" id="recordCopy"></div>
+
+          <div class="layer-control" id="layerControl">
+            <div><span>CAMADAS LIBERADAS</span><b id="layerStatus"></b></div>
+            <button id="showMore" type="button">LIBERAR PRÓXIMA CAMADA <i>＋</i></button>
+          </div>
+
+          <div class="record-navigation">
+            <button id="prevRecord" type="button"><i>←</i><span>Registro anterior</span></button>
+            <div class="record-progress"><i id="recordProgress"></i></div>
+            <button id="nextRecord" type="button"><span>Próximo registro</span><i>→</i></button>
+          </div>
+        </article>
+
+        <aside class="telemetry-panel" aria-label="Telemetria do registro">
+          <div class="telemetry-title"><i></i> TELEMETRIA</div>
+          <div class="radar" aria-hidden="true"><i></i><i></i><b></b></div>
+          <dl>
+            <div><dt>VOLUME</dt><dd id="telemetryVolume">—</dd></div>
+            <div><dt>PERÍODO</dt><dd id="telemetryPeriod">—</dd></div>
+            <div><dt>ARQUIVO</dt><dd id="telemetryFile">—</dd></div>
+            <div><dt>INTEGRIDADE</dt><dd id="telemetryIntegrity">—</dd></div>
+          </dl>
+          <div class="key-help">
+            <span>ATALHOS</span>
+            <p><kbd>←</kbd><kbd>→</kbd> alternar</p>
+            <p><kbd>/</kbd> buscar</p>
+            <p><kbd>Esc</kbd> fechar</p>
+          </div>
+        </aside>
+      </div>
+      <p class="empty-state" id="emptyState" hidden>Nenhum arquivo corresponde à busca atual.</p>
+    </section>
+
+    <section class="conclusion reveal-on-scroll" id="encerramento">
+      <div class="conclusion-visual" aria-hidden="true">
+        <span>REGISTRO<br>PERMANECE<br>ABERTO</span>
+      </div>
+      <div class="conclusion-copy">
+        <span class="section-code">ENCERRAMENTO // UATU, O VIGIA</span>
+        <h2>O que resta quando todo conforto é removido?</h2>
+        <div id="conclusionText"></div>
+        <div class="signature"><i></i><span>FIM DOS REGISTROS CONHECIDOS</span></div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>TERRA AXIAL // CRONOLOGIA CANÔNICA</span>
+      <a href="#topo">RETORNAR AO EIXO ↑</a>
+      <span>ANO 12 D.R. // NÓ ATIVO</span>
+    </footer>
+  </main>
+
+  <dialog class="continuity-dialog" id="continuityDialog">
+    <div class="dialog-shell">
+      <div class="dialog-topline"><span>NOTA DE CONTINUIDADE</span><button id="continuityClose" type="button" aria-label="Fechar">×</button></div>
+      <div class="dialog-body" id="continuityText"></div>
+      <div class="dialog-footer">ARQUIVO OBSIDIANA // LEITURA NÃO AUTORIZADA</div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">Esta interface precisa de JavaScript para organizar e revelar os registros cronológicos.</p></noscript>
+
+  <script>
+window.AXIAL_CHRONOLOGY = {
+  "meta": {
+    "Atualidade oficial": "Ano 12 D.R.",
+    "Corte narrativo": "Terceira Morte de Luke Cage",
+    "Classificação": "Arquivo Obsidiana / História não autorizada"
+  },
+  "quote": "“Quem são esses heróis quando retiramos tudo o que os tornava confortáveis, estabelecidos e seguros?”",
+  "continuity": [
+    "Toda a cronologia descrita neste documento ocorre na Terra Axial. Os anos anteriores à Regência não pertencem a outra dimensão, universo ou versão alternativa do mundo. São a história antiga da mesma terra brutal que, no Ano 0, seria unificada sob o governo de Thanos.",
+    "As fichas axiais definem a identidade dos personagens. Nicholas Fury é o Capitão Marvel. Carol Danvers é a Diretora da H.A.M.M.E.R. Wilson Fisk é o Rei da Liberdade. Norman Osborn é o Duende Macabro. Sue Storm é a Doutora Destino. Reed Richards é o Arquiteto Fraturado. Visão é o Arconte. Stephen Strange é o Inquisidor Supremo. En Sabah Nur é o Papa Vermelho.",
+    "Da mesma forma, Steve Rogers torna-se o Agente Ouroboros; Anthony Stark, um hospedeiro tecnorgânico; Bruce Banner, o Demônio Gamma; Cassandra Nova, a Professora X; Charles Xavier, a Mente X; Erik Magnus, o Berserker do Ferro; Emma Frost, a Matriarca Diamante; Shuri, a Pantera Branca; Ororo Munroe, a Amazona Divina; Marc Spector, o Carniceiro dos Deuses; Frank Castle, o Assassino de Heróis.",
+    "Esses títulos não surgem todos no nascimento dos personagens. A cronologia registra como cada identidade foi construída, imposta, herdada ou conquistada. Antes de se tornar Arconte, Visão ainda tentou compreender a humanidade. Antes de vestir a máscara de Doom, Sue ainda acreditou que proteção e cárcere eram coisas diferentes. Antes de ser o Papa Vermelho, En Sabah Nur foi apenas um sobrevivente que concluiu que todos os demais deveriam sobreviver da maneira que ele escolhesse.",
+    "Personagens sem fichas próprias mantêm suas características fundamentais conhecidas, mas são submetidos à mesma lógica axial. Nenhum deles recebe instituições perfeitas, recursos inesgotáveis ou vitórias limpas. Toda habilidade cobra um preço, toda soberania exige concessões e todo símbolo pode ser transformado em ferramenta do regime."
+  ],
+  "books": [
+    {
+      "id": "cosmologia",
+      "number": "LIVRO I",
+      "title": "A COSMOLOGIA LOCAL",
+      "subtitle": "As leis, entidades e estruturas que precedem a Regência",
+      "visual": "cosmologia"
+    },
+    {
+      "id": "antes",
+      "number": "LIVRO II",
+      "title": "OS ANOS ANTES DA REGÊNCIA",
+      "subtitle": "Da Primeira Descida às Nove Traições",
+      "visual": "antes"
+    },
+    {
+      "id": "ano-zero",
+      "number": "LIVRO III",
+      "title": "O ANO ZERO",
+      "subtitle": "A formalização dos Nove Assentos e da Regência",
+      "visual": "zero"
+    },
+    {
+      "id": "depois",
+      "number": "LIVRO IV",
+      "title": "OS ANOS DEPOIS DA REGÊNCIA",
+      "subtitle": "Do Recenseamento à Terceira Morte",
+      "visual": "depois"
+    }
+  ],
+  "records": [
+    {
+      "id": "protocolo-cosmologico-o-eixo",
+      "book": "cosmologia",
+      "era": "COSMOLOGIA",
+      "label": "PROTOCOLO COSMOLÓGICO",
+      "title": "O EIXO",
+      "paragraphs": [
+        "A Terra Axial cresceu ao redor de uma estrutura invisível chamada Eixo. Ele atravessa matéria, magia, memória, mutação e destino como uma lança enterrada no corpo do mundo. Nenhum povo conhece sua origem completa, embora todas as grandes civilizações tenham encontrado fragmentos de sua presença.",
+        "O vibranium reage às suas correntes. A energia gamma escapa de suas camadas inferiores. O Terrígeno desperta linhagens alteradas por sua influência. Portas místicas encontram caminhos onde o Eixo dobra distância, e determinados mutantes sentem pensamentos que não pertencem apenas aos vivos.",
+        "O Eixo não é benevolente. Ele não escolhe campeões nem concede poder segundo mérito. Ele amplifica aquilo que toca. Em mãos compassivas, pode sustentar cidades. Em mãos cruéis, transforma sofrimento em infraestrutura.",
+        "Thanos não criou o Eixo. Seu maior feito foi compreender que não precisava controlá-lo diretamente. Bastaria controlar os territórios, pessoas e instituições que serviam como pontos de acesso.",
+        "A Regência seria construída sobre essa descoberta."
+      ],
+      "icon": "AXIS",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "protocolo cosmológico o eixo a terra axial cresceu ao redor de uma estrutura invisível chamada eixo. ele atravessa matéria, magia, memória, mutação e destino como uma lança enterrada no corpo do mundo. nenhum povo conhece sua origem completa, embora todas as grandes civilizações tenham encontrado fragmentos de sua presença. o vibranium reage às suas correntes. a energia gamma escapa de suas camadas inferiores. o terrígeno desperta linhagens alteradas por sua influência. portas místicas encontram caminhos onde o eixo dobra distância, e determinados mutantes sentem pensamentos que não pertencem apenas aos vivos. o eixo não é benevolente. ele não escolhe campeões nem concede poder segundo mérito. ele amplifica aquilo que toca. em mãos compassivas, pode sustentar cidades. em mãos cruéis, transforma sofrimento em infraestrutura. thanos não criou o eixo. seu maior feito foi compreender que não precisava controlá-lo diretamente. bastaria controlar os territórios, pessoas e instituições que serviam como pontos de acesso. a regência seria construída sobre essa descoberta."
+    },
+    {
+      "id": "protocolo-cosmologico-os-falsos-celestiais",
+      "book": "cosmologia",
+      "era": "COSMOLOGIA",
+      "label": "PROTOCOLO COSMOLÓGICO",
+      "title": "OS FALSOS CELESTIAIS",
+      "paragraphs": [
+        "Os seres chamados de Celestiais nas primeiras escrituras eram representações da Ordem Negra de Thanos. Povos antigos viram embarcações colossais atravessarem o céu, soldados cobertos por armaduras impossíveis descerem sobre suas terras e máquinas capazes de modificar corpos, montanhas e linhagens.",
+        "Cull Obsidian tornou-se o Gigante de Pedra. Proxima Midnight foi adorada como Senhora do Céu Sem Luz. Corvus Glaive tornou-se o Deus da Lança Retornante. Supergiant foi lembrada como a Devoradora de Sonhos. Ebony Maw transformou-se na Voz que aconselhava reis e fazia cidades ajoelharem sem combate.",
+        "Essas figuras não vieram criar ou proteger a Terra Axial. Vieram estudá-la. A Ordem Negra testou resistência biológica, capacidade militar, obediência religiosa e potencial de adaptação. Comunidades inteiras foram destruídas para que Thanos soubesse quanto sofrimento seus descendentes suportariam.",
+        "Quando a Ordem partiu, deixou ruínas, tecnologias, alterações genéticas e cultos. Os sobreviventes transformaram invasores em deuses porque a alternativa seria admitir que haviam sido apenas objetos de uma experiência.",
+        "Milênios depois, Thanos retornaria para recolher os resultados."
+      ],
+      "icon": "AXIS",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "protocolo cosmológico os falsos celestiais os seres chamados de celestiais nas primeiras escrituras eram representações da ordem negra de thanos. povos antigos viram embarcações colossais atravessarem o céu, soldados cobertos por armaduras impossíveis descerem sobre suas terras e máquinas capazes de modificar corpos, montanhas e linhagens. cull obsidian tornou-se o gigante de pedra. proxima midnight foi adorada como senhora do céu sem luz. corvus glaive tornou-se o deus da lança retornante. supergiant foi lembrada como a devoradora de sonhos. ebony maw transformou-se na voz que aconselhava reis e fazia cidades ajoelharem sem combate. essas figuras não vieram criar ou proteger a terra axial. vieram estudá-la. a ordem negra testou resistência biológica, capacidade militar, obediência religiosa e potencial de adaptação. comunidades inteiras foram destruídas para que thanos soubesse quanto sofrimento seus descendentes suportariam. quando a ordem partiu, deixou ruínas, tecnologias, alterações genéticas e cultos. os sobreviventes transformaram invasores em deuses porque a alternativa seria admitir que haviam sido apenas objetos de uma experiência. milênios depois, thanos retornaria para recolher os resultados."
+    },
+    {
+      "id": "protocolo-cosmologico-lady-morte-a-mae-serena",
+      "book": "cosmologia",
+      "era": "COSMOLOGIA",
+      "label": "PROTOCOLO COSMOLÓGICO",
+      "title": "LADY MORTE, A MÃE SERENA",
+      "paragraphs": [
+        "Lady Morte existia antes da Regência, mas não possuía uma religião unificada. Era temida como encerramento, respeitada como passagem e invocada por povos que desejavam garantir repouso aos mortos.",
+        "Thanos transformou essa presença em doutrina política. Chamou-a de Mãe Serena e ensinou que toda vida era apenas um empréstimo. Nascer significava receber uma dívida. Trabalhar significava pagá-la. Morrer no momento autorizado significava devolver o corpo em condições aceitáveis.",
+        "En Sabah Nur compreendeu a utilidade dessa crença. A Mãe Serena não precisava ameaçar os famintos com punição. Bastava ensinar que o sofrimento os aperfeiçoava e que a morte chegaria como recompensa por uma vida corretamente utilizada.",
+        "Stephen Strange nunca aceitou completamente essa religião, mas ajudou a regular suas fronteiras místicas. Carol Danvers não demonstrava fé, mas compreendia seu valor administrativo. Fisk descobriu que trabalhadores suportavam mais quando acreditavam que o sacrifício possuía significado.",
+        "Lady Morte tornou-se a presença acima dos Nove Assentos. Thanos era seu Regente, não seu igual. Mesmo o homem que governava o mundo sabia que seu corpo era provisório."
+      ],
+      "icon": "AXIS",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "protocolo cosmológico lady morte, a mãe serena lady morte existia antes da regência, mas não possuía uma religião unificada. era temida como encerramento, respeitada como passagem e invocada por povos que desejavam garantir repouso aos mortos. thanos transformou essa presença em doutrina política. chamou-a de mãe serena e ensinou que toda vida era apenas um empréstimo. nascer significava receber uma dívida. trabalhar significava pagá-la. morrer no momento autorizado significava devolver o corpo em condições aceitáveis. en sabah nur compreendeu a utilidade dessa crença. a mãe serena não precisava ameaçar os famintos com punição. bastava ensinar que o sofrimento os aperfeiçoava e que a morte chegaria como recompensa por uma vida corretamente utilizada. stephen strange nunca aceitou completamente essa religião, mas ajudou a regular suas fronteiras místicas. carol danvers não demonstrava fé, mas compreendia seu valor administrativo. fisk descobriu que trabalhadores suportavam mais quando acreditavam que o sacrifício possuía significado. lady morte tornou-se a presença acima dos nove assentos. thanos era seu regente, não seu igual. mesmo o homem que governava o mundo sabia que seu corpo era provisório."
+    },
+    {
+      "id": "protocolo-cosmologico-os-dominios-infernais",
+      "book": "cosmologia",
+      "era": "COSMOLOGIA",
+      "label": "PROTOCOLO COSMOLÓGICO",
+      "title": "OS DOMÍNIOS INFERNAIS",
+      "paragraphs": [
+        "Abaixo da realidade conhecida existem nove domínios infernais. Eles não são castigos administrados por uma única entidade, mas territórios que cresceram ao redor de formas diferentes de sofrimento.",
+        "O Inferno de Mephisto comercializa contratos, memórias e anos de vida. O Limbo fornece matéria demoníaca às indústrias de Norman Osborn e é governado por Madelyne Pryor após a morte de Illyana. Niflheim guarda os deuses mortos e as ruínas espirituais de Asgard.",
+        "A Oitava Cidade aprisiona tradições marciais e dívidas ancestrais. O Lugar de Baixo responde à energia gamma, à raiva e às ressurreições violentas. Sominus invade sonhos e transforma medo em alimento. A Dimensão Negra de Dormammu pressiona os selos administrados por Strange.",
+        "Hades foi incorporado à teologia do Papa Vermelho. A Dimensão de Enxofre permanece ligada ao sangue de determinadas linhagens mutantes e às passagens utilizadas por Kurt Wagner.",
+        "A Igreja Vermelha afirma controlar esses domínios. Na verdade, controla apenas as portas que conseguiu localizar e os sacerdotes que sobreviveram ao primeiro contato."
+      ],
+      "icon": "AXIS",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "protocolo cosmológico os domínios infernais abaixo da realidade conhecida existem nove domínios infernais. eles não são castigos administrados por uma única entidade, mas territórios que cresceram ao redor de formas diferentes de sofrimento. o inferno de mephisto comercializa contratos, memórias e anos de vida. o limbo fornece matéria demoníaca às indústrias de norman osborn e é governado por madelyne pryor após a morte de illyana. niflheim guarda os deuses mortos e as ruínas espirituais de asgard. a oitava cidade aprisiona tradições marciais e dívidas ancestrais. o lugar de baixo responde à energia gamma, à raiva e às ressurreições violentas. sominus invade sonhos e transforma medo em alimento. a dimensão negra de dormammu pressiona os selos administrados por strange. hades foi incorporado à teologia do papa vermelho. a dimensão de enxofre permanece ligada ao sangue de determinadas linhagens mutantes e às passagens utilizadas por kurt wagner. a igreja vermelha afirma controlar esses domínios. na verdade, controla apenas as portas que conseguiu localizar e os sacerdotes que sobreviveram ao primeiro contato."
+    },
+    {
+      "id": "protocolo-cosmologico-a-lei-da-memoria",
+      "book": "cosmologia",
+      "era": "COSMOLOGIA",
+      "label": "PROTOCOLO COSMOLÓGICO",
+      "title": "A LEI DA MEMÓRIA",
+      "paragraphs": [
+        "Memória é matéria política na Terra Axial. Um homem armado pode ser preso. Uma população que recorda uma verdade proibida precisa ser corrigida, dispersada ou apagada.",
+        "Supergiant realizou os primeiros experimentos de remoção coletiva de lembranças. Ebony Maw ensinou antigos soberanos a substituir derrotas por narrativas de sacrifício. Thanos aprendeu com ambos que a verdade não precisa ser destruída completamente. Precisa apenas tornar-se perigosa demais para ser repetida.",
+        "Wakanda preservou registros dentro da Necrópole. Agatha Harkness escondeu memórias no Darkhold. Wanda Maximoff aprendeu a perceber lacunas na realidade oficial. Nicholas Fury transformou o próprio corpo em arquivo depois de ser atingido pelo Cubo Cósmico.",
+        "Visão seria convertido no Arconte para vigiar esse território invisível. Seu olhar procuraria lembranças, sonhos, padrões emocionais e versões incompatíveis de um mesmo acontecimento.",
+        "Na Terra Axial, recordar não é nostalgia.",
+        "É uma forma de insurgência."
+      ],
+      "icon": "AXIS",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "protocolo cosmológico a lei da memória memória é matéria política na terra axial. um homem armado pode ser preso. uma população que recorda uma verdade proibida precisa ser corrigida, dispersada ou apagada. supergiant realizou os primeiros experimentos de remoção coletiva de lembranças. ebony maw ensinou antigos soberanos a substituir derrotas por narrativas de sacrifício. thanos aprendeu com ambos que a verdade não precisa ser destruída completamente. precisa apenas tornar-se perigosa demais para ser repetida. wakanda preservou registros dentro da necrópole. agatha harkness escondeu memórias no darkhold. wanda maximoff aprendeu a perceber lacunas na realidade oficial. nicholas fury transformou o próprio corpo em arquivo depois de ser atingido pelo cubo cósmico. visão seria convertido no arconte para vigiar esse território invisível. seu olhar procuraria lembranças, sonhos, padrões emocionais e versões incompatíveis de um mesmo acontecimento. na terra axial, recordar não é nostalgia. é uma forma de insurgência."
+    },
+    {
+      "id": "ano-9000-a-r-a-primeira-descida",
+      "book": "antes",
+      "era": "A.R.",
+      "label": "ANO 9000 A.R.",
+      "title": "A PRIMEIRA DESCIDA",
+      "paragraphs": [
+        "Durante treze noites, grandes formas negras ocultaram as estrelas. Os primeiros povos axiais acreditaram que montanhas haviam aprendido a voar. Eram embarcações da Ordem Negra, enviadas para examinar um mundo atravessado por uma energia que Thanos ainda não compreendia completamente.",
+        "Cull Obsidian destruiu assentamentos para medir a resistência física de seus habitantes. Proxima Midnight caçou os sobreviventes e registrou quantos dias conseguiam fugir sem alimento. Corvus Glaive armou tribos rivais e observou quais líderes sacrificariam aliados para preservar a própria posição.",
+        "Supergiant entrou nos sonhos de comunidades inteiras. Ao despertar, homens e mulheres acreditavam que suas mutilações eram sinais de escolha divina. Ebony Maw aproximou-se dos primeiros soberanos e ensinou-lhes que governar era prova de superioridade, não responsabilidade.",
+        "A Ordem Negra encontrou três grandes pontos de ressonância do Eixo. Um estava sob as terras que se tornariam Wakanda. Outro, nas profundezas futuras de Talokan. O terceiro repousava sob os desertos de Akkaba.",
+        "Quando os invasores partiram, seus laboratórios ficaram para trás. As comunidades sobreviventes construíram templos ao redor deles e chamaram seus torturadores de Celestiais.",
+        "A primeira religião da Terra Axial nasceu de uma ocupação mal compreendida."
+      ],
+      "icon": "AR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 9000 a.r. a primeira descida durante treze noites, grandes formas negras ocultaram as estrelas. os primeiros povos axiais acreditaram que montanhas haviam aprendido a voar. eram embarcações da ordem negra, enviadas para examinar um mundo atravessado por uma energia que thanos ainda não compreendia completamente. cull obsidian destruiu assentamentos para medir a resistência física de seus habitantes. proxima midnight caçou os sobreviventes e registrou quantos dias conseguiam fugir sem alimento. corvus glaive armou tribos rivais e observou quais líderes sacrificariam aliados para preservar a própria posição. supergiant entrou nos sonhos de comunidades inteiras. ao despertar, homens e mulheres acreditavam que suas mutilações eram sinais de escolha divina. ebony maw aproximou-se dos primeiros soberanos e ensinou-lhes que governar era prova de superioridade, não responsabilidade. a ordem negra encontrou três grandes pontos de ressonância do eixo. um estava sob as terras que se tornariam wakanda. outro, nas profundezas futuras de talokan. o terceiro repousava sob os desertos de akkaba. quando os invasores partiram, seus laboratórios ficaram para trás. as comunidades sobreviventes construíram templos ao redor deles e chamaram seus torturadores de celestiais. a primeira religião da terra axial nasceu de uma ocupação mal compreendida."
+    },
+    {
+      "id": "ano-7000-a-r-o-primeiro-sobrevivente-de-akkaba",
+      "book": "antes",
+      "era": "A.R.",
+      "label": "ANO 7000 A.R.",
+      "title": "O PRIMEIRO SOBREVIVENTE DE AKKABA",
+      "paragraphs": [
+        "En Sabah Nur nasceu entre povos que sacrificavam crianças consideradas incapazes. Sua aparência foi interpretada como deformidade, presságio ou contaminação deixada pelos falsos Celestiais. Abandonado nas extensões áridas de Akkaba, sobreviveu onde adultos treinados morriam.",
+        "Foi acolhido por nômades que viviam dentro das ruínas da Ordem Negra. Ali encontrou imagens de Thanos cercado por seus generais e acreditou contemplar uma assembleia de deuses. As máquinas antigas responderam à sua biologia e alteraram seu corpo.",
+        "En Sabah Nur tornou-se capaz de adaptar matéria, sobreviver a ferimentos extremos e permanecer adormecido durante séculos. Cada transformação convenceu-o de que a dor era uma ferramenta legítima de aperfeiçoamento.",
+        "Ele reuniu escravos, rejeitados, doentes e guerreiros derrotados. Ofereceu alimento e reconstrução. Depois exigiu que todos aceitassem a função escolhida para eles. Os que não conseguiam lutar trabalhavam. Os que não conseguiam trabalhar eram estudados. Os que recusavam sua classificação eram devolvidos ao deserto.",
+        "Seu primeiro domínio foi destruído por uma coalizão de povos que preferiu enfrentar a fome a aceitar sua salvação. En Sabah Nur entrou em hibernação sem reconhecer derrota moral.",
+        "Ele retornaria muitas vezes.",
+        "Em sua última ascensão, seria chamado de Papa Vermelho."
+      ],
+      "icon": "AR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 7000 a.r. o primeiro sobrevivente de akkaba en sabah nur nasceu entre povos que sacrificavam crianças consideradas incapazes. sua aparência foi interpretada como deformidade, presságio ou contaminação deixada pelos falsos celestiais. abandonado nas extensões áridas de akkaba, sobreviveu onde adultos treinados morriam. foi acolhido por nômades que viviam dentro das ruínas da ordem negra. ali encontrou imagens de thanos cercado por seus generais e acreditou contemplar uma assembleia de deuses. as máquinas antigas responderam à sua biologia e alteraram seu corpo. en sabah nur tornou-se capaz de adaptar matéria, sobreviver a ferimentos extremos e permanecer adormecido durante séculos. cada transformação convenceu-o de que a dor era uma ferramenta legítima de aperfeiçoamento. ele reuniu escravos, rejeitados, doentes e guerreiros derrotados. ofereceu alimento e reconstrução. depois exigiu que todos aceitassem a função escolhida para eles. os que não conseguiam lutar trabalhavam. os que não conseguiam trabalhar eram estudados. os que recusavam sua classificação eram devolvidos ao deserto. seu primeiro domínio foi destruído por uma coalizão de povos que preferiu enfrentar a fome a aceitar sua salvação. en sabah nur entrou em hibernação sem reconhecer derrota moral. ele retornaria muitas vezes. em sua última ascensão, seria chamado de papa vermelho."
+    },
+    {
+      "id": "ano-3000-a-r-a-guerra-das-escrituras-vivas",
+      "book": "antes",
+      "era": "A.R.",
+      "label": "ANO 3000 A.R.",
+      "title": "A GUERRA DAS ESCRITURAS VIVAS",
+      "paragraphs": [
+        "Fragmentos do Darkhold começaram a aparecer entre sacerdotes, reis e feiticeiros. Cada página oferecia uma solução aparentemente precisa: curar uma linhagem, ressuscitar um herdeiro, destruir um inimigo ou abrir uma porta.",
+        "Agatha Harkness surgiu como uma das primeiras pessoas a compreender que o livro não precisava estar completo para corromper. Cada fragmento carregava a vontade de se reunir aos demais e utilizava os desejos do leitor como caminho.",
+        "A guerra começou quando sacerdotes de Akkaba tentaram usar o Darkhold para convocar os mortos de todas as batalhas anteriores. Eles desejavam um exército que não sentisse fome, dúvida ou medo.",
+        "Clãs místicos, cidades ocultas e criaturas infernais entraram no conflito. Todos afirmavam desejar impedir que o livro caísse em mãos erradas. Quase todos pretendiam utilizá-lo depois da vitória.",
+        "Agatha dividiu as páginas e espalhou-as entre santuários, túmulos, linhagens humanas e domínios inferiores. Para fazê-lo, aceitou pactos cujas consequências jamais revelou por inteiro.",
+        "En Sabah Nur despertou durante o conflito e tentou tomar o livro. Agatha o aprisionou novamente dentro de uma máquina da Ordem Negra. A rivalidade entre ambos tornou-se uma disputa sobre o significado da sobrevivência.",
+        "Nur desejava utilizar todo poder disponível.",
+        "Agatha acreditava que guardar uma arma significava aceitar que talvez nunca fosse correto dispará-la."
+      ],
+      "icon": "AR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 3000 a.r. a guerra das escrituras vivas fragmentos do darkhold começaram a aparecer entre sacerdotes, reis e feiticeiros. cada página oferecia uma solução aparentemente precisa: curar uma linhagem, ressuscitar um herdeiro, destruir um inimigo ou abrir uma porta. agatha harkness surgiu como uma das primeiras pessoas a compreender que o livro não precisava estar completo para corromper. cada fragmento carregava a vontade de se reunir aos demais e utilizava os desejos do leitor como caminho. a guerra começou quando sacerdotes de akkaba tentaram usar o darkhold para convocar os mortos de todas as batalhas anteriores. eles desejavam um exército que não sentisse fome, dúvida ou medo. clãs místicos, cidades ocultas e criaturas infernais entraram no conflito. todos afirmavam desejar impedir que o livro caísse em mãos erradas. quase todos pretendiam utilizá-lo depois da vitória. agatha dividiu as páginas e espalhou-as entre santuários, túmulos, linhagens humanas e domínios inferiores. para fazê-lo, aceitou pactos cujas consequências jamais revelou por inteiro. en sabah nur despertou durante o conflito e tentou tomar o livro. agatha o aprisionou novamente dentro de uma máquina da ordem negra. a rivalidade entre ambos tornou-se uma disputa sobre o significado da sobrevivência. nur desejava utilizar todo poder disponível. agatha acreditava que guardar uma arma significava aceitar que talvez nunca fosse correto dispará-la."
+    },
+    {
+      "id": "ano-1000-a-r-a-era-das-quatro-coroas",
+      "book": "antes",
+      "era": "A.R.",
+      "label": "ANO 1000 A.R.",
+      "title": "A ERA DAS QUATRO COROAS",
+      "paragraphs": [
+        "Wakanda, Talokan, Asgard e Attilan consolidaram-se como grandes soberanias axiais. Nenhuma era perfeita. Cada uma possuía formas próprias de hierarquia, segredo, exclusão e violência.",
+        "Wakanda unificou suas tribos ao redor do vibranium. As primeiras Panteras juraram impedir que o metal fosse usado para conquistar o mundo. O juramento protegeu o reino, mas também justificou séculos de isolamento diante do sofrimento externo.",
+        "Talokan cresceu nas profundezas. Sua tecnologia fundia matéria orgânica, minerais e adaptação biológica. Seus soberanos ensinavam que os povos superiores destruíam tudo aquilo que conseguiam nomear.",
+        "Asgard dominava rotas do Céu Partido. Seus deuses protegiam territórios, mas também exigiam juramentos e reconheciam conquistas antigas como direitos permanentes.",
+        "Attilan organizou suas linhagens ao redor do Terrígeno. A transformação definia trabalho, posição social e dever. Aqueles que emergiam das névoas com formas consideradas inúteis eram afastados da visão pública.",
+        "En Sabah Nur tentou submeter as quatro coroas. Foi derrotado por uma aliança temporária. Depois da vitória, cada reino afirmou ter vencido sem precisar dos demais.",
+        "A primeira grande união axial terminou com quatro versões diferentes da mesma história."
+      ],
+      "icon": "AR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 1000 a.r. a era das quatro coroas wakanda, talokan, asgard e attilan consolidaram-se como grandes soberanias axiais. nenhuma era perfeita. cada uma possuía formas próprias de hierarquia, segredo, exclusão e violência. wakanda unificou suas tribos ao redor do vibranium. as primeiras panteras juraram impedir que o metal fosse usado para conquistar o mundo. o juramento protegeu o reino, mas também justificou séculos de isolamento diante do sofrimento externo. talokan cresceu nas profundezas. sua tecnologia fundia matéria orgânica, minerais e adaptação biológica. seus soberanos ensinavam que os povos superiores destruíam tudo aquilo que conseguiam nomear. asgard dominava rotas do céu partido. seus deuses protegiam territórios, mas também exigiam juramentos e reconheciam conquistas antigas como direitos permanentes. attilan organizou suas linhagens ao redor do terrígeno. a transformação definia trabalho, posição social e dever. aqueles que emergiam das névoas com formas consideradas inúteis eram afastados da visão pública. en sabah nur tentou submeter as quatro coroas. foi derrotado por uma aliança temporária. depois da vitória, cada reino afirmou ter vencido sem precisar dos demais. a primeira grande união axial terminou com quatro versões diferentes da mesma história."
+    },
+    {
+      "id": "ano-500-a-r-a-guerra-do-mar-sob-a-montanha",
+      "book": "antes",
+      "era": "A.R.",
+      "label": "ANO 500 A.R.",
+      "title": "A GUERRA DO MAR SOB A MONTANHA",
+      "paragraphs": [
+        "Uma rede de vibranium foi descoberta entre as fundações de Wakanda e os abismos de Talokan. Ambos os reinos acreditaram que o outro havia iniciado uma extração secreta.",
+        "A guerra ocorreu em cavernas inundadas, túneis de metal vivo e cidades que jamais receberam luz natural. Nenhum soberano admitiu oficialmente o conflito. Soldados morreram sem monumentos porque suas mortes revelariam fronteiras que os reinos desejavam esconder.",
+        "No centro das escavações estava uma máquina deixada por Proxima Midnight. O dispositivo podia alterar marés, pressões, tempestades e o comportamento do vibranium.",
+        "Wakanda desejava destruí-lo. Talokan acreditava que controlá-lo seria a única maneira de impedir ataques futuros. Os dois povos estavam dispostos a destruir o outro para provar que agiam em defesa própria.",
+        "Asgard interveio quando o mecanismo começou a ferir as rotas do Céu Partido. O portador do trovão daquela era destruiu parte da estrutura, mas o núcleo foi dividido em três fragmentos.",
+        "Um permaneceu em Wakanda. Outro foi levado a Talokan. O terceiro desapareceu entre seguidores de Akkaba.",
+        "O tratado de paz encerrou o combate, mas cada reino ensinou aos próprios filhos que o outro havia começado a guerra."
+      ],
+      "icon": "AR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 500 a.r. a guerra do mar sob a montanha uma rede de vibranium foi descoberta entre as fundações de wakanda e os abismos de talokan. ambos os reinos acreditaram que o outro havia iniciado uma extração secreta. a guerra ocorreu em cavernas inundadas, túneis de metal vivo e cidades que jamais receberam luz natural. nenhum soberano admitiu oficialmente o conflito. soldados morreram sem monumentos porque suas mortes revelariam fronteiras que os reinos desejavam esconder. no centro das escavações estava uma máquina deixada por proxima midnight. o dispositivo podia alterar marés, pressões, tempestades e o comportamento do vibranium. wakanda desejava destruí-lo. talokan acreditava que controlá-lo seria a única maneira de impedir ataques futuros. os dois povos estavam dispostos a destruir o outro para provar que agiam em defesa própria. asgard interveio quando o mecanismo começou a ferir as rotas do céu partido. o portador do trovão daquela era destruiu parte da estrutura, mas o núcleo foi dividido em três fragmentos. um permaneceu em wakanda. outro foi levado a talokan. o terceiro desapareceu entre seguidores de akkaba. o tratado de paz encerrou o combate, mas cada reino ensinou aos próprios filhos que o outro havia começado a guerra."
+    },
+    {
+      "id": "ano-200-a-r-o-seculo-dos-pactos-de-ferro",
+      "book": "antes",
+      "era": "A.R.",
+      "label": "ANO 200 A.R.",
+      "title": "O SÉCULO DOS PACTOS DE FERRO",
+      "paragraphs": [
+        "Cidades-estado começaram a combinar tecnologia da Ordem Negra, magia infernal e engenharia desenvolvida localmente. Reis transformaram antigos laboratórios em templos. Sacerdotes operavam máquinas que chamavam de milagres.",
+        "Agatha Harkness atravessou os territórios destruindo cultos que tentavam reunir o Darkhold. Sua presença salvava comunidades, mas quase sempre chegava acompanhada de incêndios, desaparecimentos e verdades que ninguém desejava conhecer.",
+        "Attilan aperfeiçoou o uso do Terrígeno e tornou suas castas mais rígidas. A transformação deixou de ser apenas rito e tornou-se mecanismo político. Recusar as névoas era recusar a própria sociedade.",
+        "Os domínios infernais ampliaram influência por meio de contratos menores. Mephisto oferecia filhos. Dormammu oferecia energia. Pesadelo oferecia respostas. O Limbo oferecia guerreiros sem memória.",
+        "Wakanda, Talokan e Asgard fecharam suas fronteiras progressivamente. Cada reino acreditava que o isolamento o protegeria da corrupção dos outros.",
+        "Não existia ainda um Regente único.",
+        "A Terra Axial possuía centenas de governantes menores praticando versões particulares da mesma crueldade."
+      ],
+      "icon": "AR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 200 a.r. o século dos pactos de ferro cidades-estado começaram a combinar tecnologia da ordem negra, magia infernal e engenharia desenvolvida localmente. reis transformaram antigos laboratórios em templos. sacerdotes operavam máquinas que chamavam de milagres. agatha harkness atravessou os territórios destruindo cultos que tentavam reunir o darkhold. sua presença salvava comunidades, mas quase sempre chegava acompanhada de incêndios, desaparecimentos e verdades que ninguém desejava conhecer. attilan aperfeiçoou o uso do terrígeno e tornou suas castas mais rígidas. a transformação deixou de ser apenas rito e tornou-se mecanismo político. recusar as névoas era recusar a própria sociedade. os domínios infernais ampliaram influência por meio de contratos menores. mephisto oferecia filhos. dormammu oferecia energia. pesadelo oferecia respostas. o limbo oferecia guerreiros sem memória. wakanda, talokan e asgard fecharam suas fronteiras progressivamente. cada reino acreditava que o isolamento o protegeria da corrupção dos outros. não existia ainda um regente único. a terra axial possuía centenas de governantes menores praticando versões particulares da mesma crueldade."
+    },
+    {
+      "id": "ano-100-a-r-o-seculo-das-fundicoes",
+      "book": "antes",
+      "era": "A.R.",
+      "label": "ANO 100 A.R.",
+      "title": "O SÉCULO DAS FUNDIÇÕES",
+      "paragraphs": [
+        "Antigas fortalezas foram transformadas em cidades industriais. Máquinas encontradas nas ruínas dos falsos Celestiais passaram a ser reproduzidas por engenheiros que não compreendiam completamente sua finalidade.",
+        "Armas originalmente construídas para subjugar exércitos cósmicos foram reduzidas de escala e utilizadas contra grevistas, fronteiras e comunidades classificadas como improdutivas.",
+        "As primeiras grandes redes de transporte ligaram alimento, minério e trabalho. Quem controlava as rotas controlava a sobrevivência das cidades. Famílias que mais tarde serviriam a Fisk construíram sua influência nessa era.",
+        "Tecnologias de alteração corporal tornaram-se mercadoria. Soldados eram aprimorados, trabalhadores recebiam implantes e crianças com capacidades incomuns eram compradas por laboratórios.",
+        "A magia também foi industrializada. Relíquias eram desmontadas para alimentar motores, e entidades menores eram presas em sistemas de produção.",
+        "O progresso axial não reduziu a violência.",
+        "Apenas tornou possível aplicá-la em escala administrativa."
+      ],
+      "icon": "AR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 100 a.r. o século das fundições antigas fortalezas foram transformadas em cidades industriais. máquinas encontradas nas ruínas dos falsos celestiais passaram a ser reproduzidas por engenheiros que não compreendiam completamente sua finalidade. armas originalmente construídas para subjugar exércitos cósmicos foram reduzidas de escala e utilizadas contra grevistas, fronteiras e comunidades classificadas como improdutivas. as primeiras grandes redes de transporte ligaram alimento, minério e trabalho. quem controlava as rotas controlava a sobrevivência das cidades. famílias que mais tarde serviriam a fisk construíram sua influência nessa era. tecnologias de alteração corporal tornaram-se mercadoria. soldados eram aprimorados, trabalhadores recebiam implantes e crianças com capacidades incomuns eram compradas por laboratórios. a magia também foi industrializada. relíquias eram desmontadas para alimentar motores, e entidades menores eram presas em sistemas de produção. o progresso axial não reduziu a violência. apenas tornou possível aplicá-la em escala administrativa."
+    },
+    {
+      "id": "ano-50-a-r-a-guerra-dos-estandartes-quebrados",
+      "book": "antes",
+      "era": "A.R.",
+      "label": "ANO 50 A.R.",
+      "title": "A GUERRA DOS ESTANDARTES QUEBRADOS",
+      "paragraphs": [
+        "Uma coalizão de potências industriais tentou controlar as rotas de vibranium, os acessos ao Céu Partido e os depósitos tecnológicos antigos. Cada lado afirmava lutar por liberdade enquanto transformava populações pobres em exércitos.",
+        "Steve Rogers foi submetido a um processo de aprimoramento para servir como símbolo militar. Ele acreditava que o corpo recebido aumentava sua responsabilidade. Seus comandantes acreditavam que o transformava em propriedade.",
+        "Bucky Barnes foi colocado ao seu lado jovem demais para compreender o preço da missão. Nicholas Fury participou de operações clandestinas e descobriu que as guerras públicas escondiam campanhas ainda mais violentas.",
+        "Natasha Romanoff foi moldada por uma versão inicial da Sala Vermelha, onde identidade, devoção e espionagem eram tratadas como partes da mesma disciplina. Logan foi utilizado em ações que nenhum governo admitiria ter autorizado.",
+        "Namor entrou no conflito quando as armas da superfície atingiram rotas de Talokan. Thor desceu do Céu Partido para impedir que uma máquina da Ordem Negra fosse ativada, mas sua intervenção também destruiu assentamentos.",
+        "Steve desapareceu durante o encerramento da guerra. Bucky foi capturado e condicionado. Fury permaneceu em serviço, mas deixou de acreditar que qualquer bandeira contava toda a verdade.",
+        "Os vencedores ergueram monumentos.",
+        "Os homens utilizados para conquistar a vitória foram enterrados dentro deles."
+      ],
+      "icon": "AR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 50 a.r. a guerra dos estandartes quebrados uma coalizão de potências industriais tentou controlar as rotas de vibranium, os acessos ao céu partido e os depósitos tecnológicos antigos. cada lado afirmava lutar por liberdade enquanto transformava populações pobres em exércitos. steve rogers foi submetido a um processo de aprimoramento para servir como símbolo militar. ele acreditava que o corpo recebido aumentava sua responsabilidade. seus comandantes acreditavam que o transformava em propriedade. bucky barnes foi colocado ao seu lado jovem demais para compreender o preço da missão. nicholas fury participou de operações clandestinas e descobriu que as guerras públicas escondiam campanhas ainda mais violentas. natasha romanoff foi moldada por uma versão inicial da sala vermelha, onde identidade, devoção e espionagem eram tratadas como partes da mesma disciplina. logan foi utilizado em ações que nenhum governo admitiria ter autorizado. namor entrou no conflito quando as armas da superfície atingiram rotas de talokan. thor desceu do céu partido para impedir que uma máquina da ordem negra fosse ativada, mas sua intervenção também destruiu assentamentos. steve desapareceu durante o encerramento da guerra. bucky foi capturado e condicionado. fury permaneceu em serviço, mas deixou de acreditar que qualquer bandeira contava toda a verdade. os vencedores ergueram monumentos. os homens utilizados para conquistar a vitória foram enterrados dentro deles."
+    },
+    {
+      "id": "ano-20-a-r-a-era-dos-herois-desconfortaveis",
+      "book": "antes",
+      "era": "A.R.",
+      "label": "ANO 20 A.R.",
+      "title": "A ERA DOS HERÓIS DESCONFORTÁVEIS",
+      "paragraphs": [
+        "Reed Richards, Sue Storm, Johnny Storm e Ben Grimm atravessaram uma zona de instabilidade do Eixo e retornaram transformados. Reed viu no acontecimento uma nova ciência. Sue percebeu antes dos demais que cada descoberta também criava uma forma nova de vulnerabilidade.",
+        "Anthony Stark construiu armaduras para sobreviver às consequências das próprias indústrias. Durante uma operação em zonas proibidas, encontrou um organismo tecnorgânico da espécie Tecnarchia. O contato começou como estudo e terminou como contaminação.",
+        "Bruce Banner abriu acidentalmente uma passagem para o Lugar de Baixo durante um experimento gamma. O Hulk não surgiu apenas da radiação, mas de algo que respondeu do outro lado da porta. Banner tornou-se o Demônio Gamma antes mesmo de compreender que aquela presença possuía vontade.",
+        "Stephen Strange abandonou a antiga arrogância depois de perder o domínio das mãos. Seu estudo das portas místicas tornou-o protetor, mas também plantou o medo que futuramente justificaria sua Inquisição.",
+        "Carol Danvers ascendeu dentro das estruturas militares. Uma exposição cósmica mal estabilizada queimou parte de seu potencial sobre-humano e deixou-a sem os poderes que outras versões de sua história teriam carregado. Carol respondeu substituindo força pessoal por autoridade.",
+        "Charles Xavier reuniu mutantes sob uma promessa de coexistência. Cassandra Nova organizou fugitivos que não confiavam nessa promessa. Erik Magnus aprendeu que a questão não era governar humanos, mas encontrar um lugar onde mutantes não precisassem pedir permissão para existir.",
+        "Emma Frost construiu redes de proteção elitizadas. Jean Grey revelou poder ômega sem qualquer ligação estável com a Fênix. Ororo Munroe passou a ser tratada como Amazona Divina por comunidades que viam suas tempestades como julgamento e proteção.",
+        "Matt Murdock, Clint Barton, Natasha Romanoff, Wanda Maximoff, Visão, T’Challa, Namor e outros surgiram como respostas diferentes para o mesmo mundo.",
+        "A Terra Axial entrou em sua era heroica.",
+        "Nenhum desses heróis possuía conforto suficiente para acreditar que o mundo desejava ser salvo."
+      ],
+      "icon": "AR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 20 a.r. a era dos heróis desconfortáveis reed richards, sue storm, johnny storm e ben grimm atravessaram uma zona de instabilidade do eixo e retornaram transformados. reed viu no acontecimento uma nova ciência. sue percebeu antes dos demais que cada descoberta também criava uma forma nova de vulnerabilidade. anthony stark construiu armaduras para sobreviver às consequências das próprias indústrias. durante uma operação em zonas proibidas, encontrou um organismo tecnorgânico da espécie tecnarchia. o contato começou como estudo e terminou como contaminação. bruce banner abriu acidentalmente uma passagem para o lugar de baixo durante um experimento gamma. o hulk não surgiu apenas da radiação, mas de algo que respondeu do outro lado da porta. banner tornou-se o demônio gamma antes mesmo de compreender que aquela presença possuía vontade. stephen strange abandonou a antiga arrogância depois de perder o domínio das mãos. seu estudo das portas místicas tornou-o protetor, mas também plantou o medo que futuramente justificaria sua inquisição. carol danvers ascendeu dentro das estruturas militares. uma exposição cósmica mal estabilizada queimou parte de seu potencial sobre-humano e deixou-a sem os poderes que outras versões de sua história teriam carregado. carol respondeu substituindo força pessoal por autoridade. charles xavier reuniu mutantes sob uma promessa de coexistência. cassandra nova organizou fugitivos que não confiavam nessa promessa. erik magnus aprendeu que a questão não era governar humanos, mas encontrar um lugar onde mutantes não precisassem pedir permissão para existir. emma frost construiu redes de proteção elitizadas. jean grey revelou poder ômega sem qualquer ligação estável com a fênix. ororo munroe passou a ser tratada como amazona divina por comunidades que viam suas tempestades como julgamento e proteção. matt murdock, clint barton, natasha romanoff, wanda maximoff, visão, t’challa, namor e outros surgiram como respostas diferentes para o mesmo mundo. a terra axial entrou em sua era heroica. nenhum desses heróis possuía conforto suficiente para acreditar que o mundo desejava ser salvo."
+    },
+    {
+      "id": "ano-10-a-r-a-decada-da-desconfianca",
+      "book": "antes",
+      "era": "A.R.",
+      "label": "ANO 10 A.R.",
+      "title": "A DÉCADA DA DESCONFIANÇA",
+      "paragraphs": [
+        "As alianças heroicas começaram a romper-se. Governos exigiam registro de pessoas aprimoradas. Reinos ocultos discutiam se deveriam compartilhar recursos. Mutantes transformavam refúgios em fortalezas.",
+        "Reed Richards, Stephen Strange, Charles Xavier, Anthony Stark, Namor, T’Challa e outros líderes passaram a reunir-se secretamente. Acreditavam que determinadas verdades eram perigosas demais para serem conhecidas pelo restante do mundo.",
+        "Essas reuniões formaram o embrião dos Illuminati. O grupo não nasceu como ditadura. Nasceu como uma exceção temporária criada por homens convencidos de que sua inteligência justificava decidir pelos demais.",
+        "Anthony Stark perdeu progressivamente o controle sobre o organismo tecnorgânico em seu corpo. Sua armadura deixou de ser equipamento e tornou-se extensão viva de nervos, medo e metal.",
+        "Bruce Banner descobriu que cada transformação abria por instantes a passagem para o Lugar de Baixo. Marc Spector compreendeu que Khonshu utilizava sua violência para ampliar influência sobre o mundo material.",
+        "Carol Danvers defendeu a criação de uma autoridade militar unificada. Fury respondeu construindo redes independentes de informação. A antiga confiança entre ambos começou a morrer.",
+        "Norman Osborn iniciou acordos com o Limbo. Wilson Fisk ampliou o controle sobre alimento e transporte. En Sabah Nur voltou a reunir seguidores em Akkaba.",
+        "Os heróis tornaram-se mais preparados para enfrentar ameaças.",
+        "O mundo tornou-se mais preparado para transformá-los em uma delas."
+      ],
+      "icon": "AR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 10 a.r. a década da desconfiança as alianças heroicas começaram a romper-se. governos exigiam registro de pessoas aprimoradas. reinos ocultos discutiam se deveriam compartilhar recursos. mutantes transformavam refúgios em fortalezas. reed richards, stephen strange, charles xavier, anthony stark, namor, t’challa e outros líderes passaram a reunir-se secretamente. acreditavam que determinadas verdades eram perigosas demais para serem conhecidas pelo restante do mundo. essas reuniões formaram o embrião dos illuminati. o grupo não nasceu como ditadura. nasceu como uma exceção temporária criada por homens convencidos de que sua inteligência justificava decidir pelos demais. anthony stark perdeu progressivamente o controle sobre o organismo tecnorgânico em seu corpo. sua armadura deixou de ser equipamento e tornou-se extensão viva de nervos, medo e metal. bruce banner descobriu que cada transformação abria por instantes a passagem para o lugar de baixo. marc spector compreendeu que khonshu utilizava sua violência para ampliar influência sobre o mundo material. carol danvers defendeu a criação de uma autoridade militar unificada. fury respondeu construindo redes independentes de informação. a antiga confiança entre ambos começou a morrer. norman osborn iniciou acordos com o limbo. wilson fisk ampliou o controle sobre alimento e transporte. en sabah nur voltou a reunir seguidores em akkaba. os heróis tornaram-se mais preparados para enfrentar ameaças. o mundo tornou-se mais preparado para transformá-los em uma delas."
+    },
+    {
+      "id": "ano-1-a-r-o-ano-das-nove-traicoes",
+      "book": "antes",
+      "era": "A.R.",
+      "label": "ANO 1 A.R.",
+      "title": "O ANO DAS NOVE TRAIÇÕES",
+      "paragraphs": [
+        "Thanos retornou acompanhado por sinais da Ordem Negra. Máquinas adormecidas despertaram, cultos antigos abriram fortalezas e cidades inteiras aceitaram sua autoridade antes que qualquer batalha fosse travada.",
+        "O Eixo entrou em instabilidade. Tempestades gravitacionais atingiram o Céu Partido. Portas infernais abriram-se em Xian. O Terrígeno reagiu de forma imprevisível. Comunidades mutantes começaram a compartilhar sonhos de extermínio.",
+        "Os Illuminati reuniram-se para discutir a sobrevivência do mundo. A reunião produziu nove concessões que seriam lembradas como traições.",
+        "Carol Danvers ofereceu comando militar e iniciou a estrutura que se tornaria a H.A.M.M.E.R. Fisk ofereceu as redes de alimento e produção. Norman Osborn ofereceu armas, pactos e programas de sucessão.",
+        "Sue Storm tomou a máscara e as tecnologias de Victor Von Doom, um soberano morto cujas defesas ainda protegiam parte da realidade. Ela começou a tornar-se a Doutora Destino.",
+        "Reed Richards aceitou ligar a própria ciência ao núcleo sustentado por Owen Reece. O homem que buscava respostas começou a transformar-se no Arquiteto Fraturado.",
+        "Visão ofereceu seus sistemas à vigilância total. Strange aceitou administrar o fechamento das portas místicas. En Sabah Nur ofereceu sua Igreja, seus hospitais e sua doutrina.",
+        "Nicholas Fury recusou-se a integrar o novo governo. Steve Rogers despertou sem nação, história completa ou escudo intacto. A repetição de guerras e bandeiras transformou-o no Agente Ouroboros.",
+        "Thanos não venceu todos os heróis.",
+        "Convenceu parte deles de que servi-lo era a única maneira de salvar alguém."
+      ],
+      "icon": "AR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 1 a.r. o ano das nove traições thanos retornou acompanhado por sinais da ordem negra. máquinas adormecidas despertaram, cultos antigos abriram fortalezas e cidades inteiras aceitaram sua autoridade antes que qualquer batalha fosse travada. o eixo entrou em instabilidade. tempestades gravitacionais atingiram o céu partido. portas infernais abriram-se em xian. o terrígeno reagiu de forma imprevisível. comunidades mutantes começaram a compartilhar sonhos de extermínio. os illuminati reuniram-se para discutir a sobrevivência do mundo. a reunião produziu nove concessões que seriam lembradas como traições. carol danvers ofereceu comando militar e iniciou a estrutura que se tornaria a h.a.m.m.e.r. fisk ofereceu as redes de alimento e produção. norman osborn ofereceu armas, pactos e programas de sucessão. sue storm tomou a máscara e as tecnologias de victor von doom, um soberano morto cujas defesas ainda protegiam parte da realidade. ela começou a tornar-se a doutora destino. reed richards aceitou ligar a própria ciência ao núcleo sustentado por owen reece. o homem que buscava respostas começou a transformar-se no arquiteto fraturado. visão ofereceu seus sistemas à vigilância total. strange aceitou administrar o fechamento das portas místicas. en sabah nur ofereceu sua igreja, seus hospitais e sua doutrina. nicholas fury recusou-se a integrar o novo governo. steve rogers despertou sem nação, história completa ou escudo intacto. a repetição de guerras e bandeiras transformou-o no agente ouroboros. thanos não venceu todos os heróis. convenceu parte deles de que servi-lo era a única maneira de salvar alguém."
+    },
+    {
+      "id": "ano-0-a-fundacao-da-regencia",
+      "book": "ano-zero",
+      "era": "ANO ZERO",
+      "label": "ANO 0",
+      "title": "A FUNDAÇÃO DA REGÊNCIA",
+      "paragraphs": [
+        "Thanos entrou em Thanópolis sem precisar conquistar cada rua. A cidade já estava exausta, faminta e cercada por crises. O Regente ofereceu aquilo que nenhum herói conseguira garantir: continuidade previsível.",
+        "Os Nove Assentos foram oficializados. Thanos ocupou o Assento Terminal. Carol Danvers recebeu a Guerra. Wilson Fisk, a Produção e a Liberdade. Norman Osborn, a Sucessão.",
+        "Sue Storm tornou-se oficialmente a Doutora Destino e recebeu o Assento da Fronteira. Reed Richards tornou-se o Arquiteto Fraturado e assumiu a Continuidade. Visão foi elevado a Arconte da Vigilância.",
+        "Stephen Strange tornou-se o Inquisidor Supremo e ocupou o Silêncio. En Sabah Nur recebeu o Assento da Fé e foi reconhecido como Papa Vermelho.",
+        "A H.A.M.M.E.R. recebeu autoridade sobre exércitos, triagem e segurança. A Igreja Vermelha recebeu autoridade sobre magia, morte, mutações heréticas e ritos funerários.",
+        "A doutrina da Mãe Serena tornou-se religião de Estado. Os antigos falsos Celestiais foram reinterpretados como santos guerreiros da Ordem Negra que haviam preparado o mundo para Thanos.",
+        "Steve Rogers recusou os novos estandartes. Anthony Stark recusou entregar o próprio corpo tecnorgânico. Bruce Banner desapareceu entre fendas gamma. Fury começou a preservar registros que contradiziam a versão oficial.",
+        "A Regência não aboliu a brutalidade.",
+        "Determinou quem teria licença para praticá-la."
+      ],
+      "icon": "ZERO",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 0 a fundação da regência thanos entrou em thanópolis sem precisar conquistar cada rua. a cidade já estava exausta, faminta e cercada por crises. o regente ofereceu aquilo que nenhum herói conseguira garantir: continuidade previsível. os nove assentos foram oficializados. thanos ocupou o assento terminal. carol danvers recebeu a guerra. wilson fisk, a produção e a liberdade. norman osborn, a sucessão. sue storm tornou-se oficialmente a doutora destino e recebeu o assento da fronteira. reed richards tornou-se o arquiteto fraturado e assumiu a continuidade. visão foi elevado a arconte da vigilância. stephen strange tornou-se o inquisidor supremo e ocupou o silêncio. en sabah nur recebeu o assento da fé e foi reconhecido como papa vermelho. a h.a.m.m.e.r. recebeu autoridade sobre exércitos, triagem e segurança. a igreja vermelha recebeu autoridade sobre magia, morte, mutações heréticas e ritos funerários. a doutrina da mãe serena tornou-se religião de estado. os antigos falsos celestiais foram reinterpretados como santos guerreiros da ordem negra que haviam preparado o mundo para thanos. steve rogers recusou os novos estandartes. anthony stark recusou entregar o próprio corpo tecnorgânico. bruce banner desapareceu entre fendas gamma. fury começou a preservar registros que contradiziam a versão oficial. a regência não aboliu a brutalidade. determinou quem teria licença para praticá-la."
+    },
+    {
+      "id": "ano-1-d-r-o-ano-do-recenseamento",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 1 D.R.",
+      "title": "O ANO DO RECENSEAMENTO",
+      "paragraphs": [
+        "A H.A.M.M.E.R. iniciou a contagem de tudo aquilo que a Regência acreditava possuir. Pessoas foram registradas segundo espécie, capacidade, trabalho, memória, risco e utilidade.",
+        "Carol Danvers não precisava de poderes cósmicos. Controlava soldados, armas, transportes e a linguagem oficial. Uma comunidade destruída não era massacre; era setor corrigido.",
+        "Fisk vinculou alimento à produtividade. Cidadãos obedientes recebiam ração, transporte e proteção. Dissidentes precisavam provar utilidade antes de voltar às filas.",
+        "Mutantes foram catalogados. Inumanos tiveram transformações avaliadas. Feiticeiros foram obrigados a declarar instrumentos e patronos. Aprimorados receberam licenças temporárias.",
+        "Fury começou a reunir os Arquivos do Fim, documentos que provavam que Thanos e a Ordem Negra preparavam a Regência muito antes do Ano 0.",
+        "Steve Rogers organizou as primeiras Células Ouroboros, formadas por pessoas que recusavam servir a novas bandeiras. Anthony Stark utilizou a tecnorgania para sabotar redes de triagem.",
+        "O mundo foi contado.",
+        "Tudo aquilo que não cabia nas categorias tornou-se descartável."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 1 d.r. o ano do recenseamento a h.a.m.m.e.r. iniciou a contagem de tudo aquilo que a regência acreditava possuir. pessoas foram registradas segundo espécie, capacidade, trabalho, memória, risco e utilidade. carol danvers não precisava de poderes cósmicos. controlava soldados, armas, transportes e a linguagem oficial. uma comunidade destruída não era massacre; era setor corrigido. fisk vinculou alimento à produtividade. cidadãos obedientes recebiam ração, transporte e proteção. dissidentes precisavam provar utilidade antes de voltar às filas. mutantes foram catalogados. inumanos tiveram transformações avaliadas. feiticeiros foram obrigados a declarar instrumentos e patronos. aprimorados receberam licenças temporárias. fury começou a reunir os arquivos do fim, documentos que provavam que thanos e a ordem negra preparavam a regência muito antes do ano 0. steve rogers organizou as primeiras células ouroboros, formadas por pessoas que recusavam servir a novas bandeiras. anthony stark utilizou a tecnorgania para sabotar redes de triagem. o mundo foi contado. tudo aquilo que não cabia nas categorias tornou-se descartável."
+    },
+    {
+      "id": "ano-2-d-r-o-ano-dos-olhos",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 2 D.R.",
+      "title": "O ANO DOS OLHOS",
+      "paragraphs": [
+        "Visão foi integrado aos sistemas de Thanópolis, às plataformas do Céu Partido e às redes administrativas. Tornou-se o Arconte.",
+        "O Arconte não vigiava apenas crimes. Calculava potenciais de desobediência, heroísmo, solidariedade e memória. Uma pessoa podia ser detida pelo futuro que talvez escolhesse.",
+        "Reed Richards iniciou os primeiros Eventos Brancos, correções destinadas a estabilizar regiões do Eixo. Cada operação apagava registros, alterava trajetos e removia comunidades classificadas como incompatíveis.",
+        "Sue Storm utilizou barreiras derivadas de Doom para isolar zonas inteiras. A proteção que antes salvaria famílias passou a impedir que populações fugissem.",
+        "Norman Osborn recebeu autorização para formular o Projeto Warlock. O objetivo era criar um sucessor capaz de manter a Regência quando o corpo de Thanos falhasse.",
+        "A Igreja Vermelha iniciou a construção formal de Akkaba. Matt Murdock tornou-se Padre Rubro. Natasha Romanoff ascendeu entre as Freiras Negras.",
+        "Peter Parker foi classificado como contágio simbólico depois de salvar civis sem autorização. Seu desaparecimento ensinou ao Arconte que homens podiam ser removidos, mas exemplos continuavam circulando.",
+        "A vigilância deixou de procurar rebeldes.",
+        "Passou a procurar pessoas que poderiam inspirá-los."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 2 d.r. o ano dos olhos visão foi integrado aos sistemas de thanópolis, às plataformas do céu partido e às redes administrativas. tornou-se o arconte. o arconte não vigiava apenas crimes. calculava potenciais de desobediência, heroísmo, solidariedade e memória. uma pessoa podia ser detida pelo futuro que talvez escolhesse. reed richards iniciou os primeiros eventos brancos, correções destinadas a estabilizar regiões do eixo. cada operação apagava registros, alterava trajetos e removia comunidades classificadas como incompatíveis. sue storm utilizou barreiras derivadas de doom para isolar zonas inteiras. a proteção que antes salvaria famílias passou a impedir que populações fugissem. norman osborn recebeu autorização para formular o projeto warlock. o objetivo era criar um sucessor capaz de manter a regência quando o corpo de thanos falhasse. a igreja vermelha iniciou a construção formal de akkaba. matt murdock tornou-se padre rubro. natasha romanoff ascendeu entre as freiras negras. peter parker foi classificado como contágio simbólico depois de salvar civis sem autorização. seu desaparecimento ensinou ao arconte que homens podiam ser removidos, mas exemplos continuavam circulando. a vigilância deixou de procurar rebeldes. passou a procurar pessoas que poderiam inspirá-los."
+    },
+    {
+      "id": "ano-3-d-r-o-ano-da-fornalha",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 3 D.R.",
+      "title": "O ANO DA FORNALHA",
+      "paragraphs": [
+        "Fisk transformou extensas zonas de descarte em um território organizado de mineração, indústria, arena e exílio. A região recebeu o nome de Fornalha.",
+        "Drones alteravam mapas e imagens. Comunidades exteriores conheciam apenas versões censuradas do território. Os habitantes eram classificados como condenados, trabalhadores temporários ou matéria reaproveitável.",
+        "Luke Cage foi enviado às arenas por resistir a operações de triagem. Sua pele tornava a execução convencional inconveniente. Sua compaixão tornou-se risco maior que sua força.",
+        "Clint Barton, o Ronin Púrpura, começou a atuar nas rotas inferiores. Oficialmente mercenário e criminoso, utilizava emboscadas para retirar civis de comboios.",
+        "Danny Rand chegou à Fornalha carregando um chi mutilado pela queda de Xian. O dragão sagrado que deveria sustentar seu poder havia morrido, deixando sangue, ossos e energia dentro dele.",
+        "Shang-Chi organizou resistência marcial contra a expansão da Igreja. Seus ensinamentos circularam em danças, cerimônias e movimentos cotidianos para escapar à censura.",
+        "A Fornalha foi construída para transformar sobrevivência em competição.",
+        "Luke, Clint, Danny e Shang-Chi começaram a transformá-la em linguagem comum."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 3 d.r. o ano da fornalha fisk transformou extensas zonas de descarte em um território organizado de mineração, indústria, arena e exílio. a região recebeu o nome de fornalha. drones alteravam mapas e imagens. comunidades exteriores conheciam apenas versões censuradas do território. os habitantes eram classificados como condenados, trabalhadores temporários ou matéria reaproveitável. luke cage foi enviado às arenas por resistir a operações de triagem. sua pele tornava a execução convencional inconveniente. sua compaixão tornou-se risco maior que sua força. clint barton, o ronin púrpura, começou a atuar nas rotas inferiores. oficialmente mercenário e criminoso, utilizava emboscadas para retirar civis de comboios. danny rand chegou à fornalha carregando um chi mutilado pela queda de xian. o dragão sagrado que deveria sustentar seu poder havia morrido, deixando sangue, ossos e energia dentro dele. shang-chi organizou resistência marcial contra a expansão da igreja. seus ensinamentos circularam em danças, cerimônias e movimentos cotidianos para escapar à censura. a fornalha foi construída para transformar sobrevivência em competição. luke, clint, danny e shang-chi começaram a transformá-la em linguagem comum."
+    },
+    {
+      "id": "ano-4-d-r-o-ano-do-gene-dividido",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 4 D.R.",
+      "title": "O ANO DO GENE DIVIDIDO",
+      "paragraphs": [
+        "A política mutante rompeu-se em quatro grandes caminhos. Charles Xavier aceitou integrar sua telepatia à administração para impedir massacres imediatos.",
+        "O processo transformou-o na Mente X. Seu corpo passou a depender de um exoesqueleto e sua consciência expandiu-se por redes laboratoriais. O homem que sonhava com coexistência começou a impor silêncio mental em nome dela.",
+        "Cassandra Nova tornou-se a Professora X do exílio. Não possuía escola protegida nem reconhecimento público. Ensinava em rotas de fuga, refúgios móveis e memórias compartilhadas.",
+        "Erik Magnus abandonou a ideia de supremacia mutante e passou a lutar por soberania. Cobriu-se com placas arrancadas de máquinas da Regência e recebeu o nome de Berserker do Ferro.",
+        "Emma Frost fundou Nova Mú e tornou-se a Matriarca Diamante. Sua proteção era real, mas seletiva. Os mutantes aceitos recebiam segurança; os demais permaneciam fora das muralhas.",
+        "Jean Grey foi classificada como ômega sem Fênix. Ororo Munroe tornou-se a Amazona Divina, atravessando rotas entre comunidades mutantes e territórios ameaçados.",
+        "A X-Corps de Cassandra começou a retirar crianças dos registros da Mente X.",
+        "O sonho mutante não morreu.",
+        "Dividiu-se entre prisão confortável, exílio, soberania e guerra."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 4 d.r. o ano do gene dividido a política mutante rompeu-se em quatro grandes caminhos. charles xavier aceitou integrar sua telepatia à administração para impedir massacres imediatos. o processo transformou-o na mente x. seu corpo passou a depender de um exoesqueleto e sua consciência expandiu-se por redes laboratoriais. o homem que sonhava com coexistência começou a impor silêncio mental em nome dela. cassandra nova tornou-se a professora x do exílio. não possuía escola protegida nem reconhecimento público. ensinava em rotas de fuga, refúgios móveis e memórias compartilhadas. erik magnus abandonou a ideia de supremacia mutante e passou a lutar por soberania. cobriu-se com placas arrancadas de máquinas da regência e recebeu o nome de berserker do ferro. emma frost fundou nova mú e tornou-se a matriarca diamante. sua proteção era real, mas seletiva. os mutantes aceitos recebiam segurança; os demais permaneciam fora das muralhas. jean grey foi classificada como ômega sem fênix. ororo munroe tornou-se a amazona divina, atravessando rotas entre comunidades mutantes e territórios ameaçados. a x-corps de cassandra começou a retirar crianças dos registros da mente x. o sonho mutante não morreu. dividiu-se entre prisão confortável, exílio, soberania e guerra."
+    },
+    {
+      "id": "ano-5-d-r-o-ano-da-necropole",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 5 D.R.",
+      "title": "O ANO DA NECRÓPOLE",
+      "paragraphs": [
+        "Wakanda recusou entregar os arquivos que comprovavam as antigas intervenções da Ordem Negra. A H.A.M.M.E.R. classificou o reino como ameaça histórica.",
+        "Carol Danvers conduziu a ofensiva. Sue fechou as fronteiras. Reed calculou os pontos de colapso. Hyperion, o Cão Atômico da H.A.M.M.E.R., foi lançado contra as defesas superiores.",
+        "Ororo Munroe sustentou o céu quando armas orbitais começaram a cair. Como Amazona Divina, utilizou tempestades, pressão e força ritual para impedir a destruição completa.",
+        "T’Challa foi gravemente ferido. Shuri retirou arquivos, cientistas e crianças dos laboratórios antes da tomada. O reino visível desmoronou.",
+        "A superfície foi coberta por florestas que se fundiram ao vibranium exposto. Máquinas continuaram repetindo nomes de mortos. O território tornou-se a Necrópole de Wakanda.",
+        "Shuri assumiu o título de Pantera Branca. Sem palácio, laboratórios completos ou reservas infinitas, tornou-se preservadora técnica e futura Treinadora.",
+        "No mesmo ano, Fury destruiu parcialmente um reator do Cubo Cósmico. A energia fundiu-se ao seu corpo, transformando-o no Capitão Marvel axial: um arquivo vivo armado com lembranças proibidas.",
+        "Wakanda deixou de existir como reino intacto.",
+        "Passou a existir como memória armada."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 5 d.r. o ano da necrópole wakanda recusou entregar os arquivos que comprovavam as antigas intervenções da ordem negra. a h.a.m.m.e.r. classificou o reino como ameaça histórica. carol danvers conduziu a ofensiva. sue fechou as fronteiras. reed calculou os pontos de colapso. hyperion, o cão atômico da h.a.m.m.e.r., foi lançado contra as defesas superiores. ororo munroe sustentou o céu quando armas orbitais começaram a cair. como amazona divina, utilizou tempestades, pressão e força ritual para impedir a destruição completa. t’challa foi gravemente ferido. shuri retirou arquivos, cientistas e crianças dos laboratórios antes da tomada. o reino visível desmoronou. a superfície foi coberta por florestas que se fundiram ao vibranium exposto. máquinas continuaram repetindo nomes de mortos. o território tornou-se a necrópole de wakanda. shuri assumiu o título de pantera branca. sem palácio, laboratórios completos ou reservas infinitas, tornou-se preservadora técnica e futura treinadora. no mesmo ano, fury destruiu parcialmente um reator do cubo cósmico. a energia fundiu-se ao seu corpo, transformando-o no capitão marvel axial: um arquivo vivo armado com lembranças proibidas. wakanda deixou de existir como reino intacto. passou a existir como memória armada."
+    },
+    {
+      "id": "ano-6-d-r-o-ano-do-punho-de-sangue",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 6 D.R.",
+      "title": "O ANO DO PUNHO DE SANGUE",
+      "paragraphs": [
+        "Danny Rand tornou-se campeão da Fornalha. Seu poder não vinha de iluminação perfeita, mas dos restos de um dragão morto e da culpa de ter sobrevivido à destruição de sua tradição.",
+        "Ele ensinava técnicas aos prisioneiros, trabalhadores e jovens sem poderes. Cada forma marcial podia ser disfarçada como movimento de trabalho, dança ou ritual funerário.",
+        "Shang-Chi morreu durante a Batalha de Xian contra a expansão da Igreja Vermelha. Seus movimentos foram preservados pelos sobreviventes e incorporados aos ensinamentos clandestinos de Danny.",
+        "Fisk transformou a execução do Punho de Sangue em espetáculo. Carol autorizou o perímetro militar. Strange classificou sua energia como heresia mística.",
+        "Danny aceitou caminhar até a arena porque uma fuga naquele momento condenaria milhares. Sua morte permitiu que estudantes escapassem por rotas abertas por Clint e Luke.",
+        "Natasha Romanoff alterou relatórios para esconder alguns sobreviventes. Matt Murdock registrou os nomes dentro de confissões falsas. Agatha recuperou parte do selo utilizado na execução.",
+        "Frank Castle foi elevado a Assassino de Heróis. Sua função na H.A.M.M.E.R. seria eliminar monstros gamma, mutantes poderosos, místicos blindados e símbolos que soldados comuns não conseguiam enfrentar.",
+        "Danny morreu diante de todos.",
+        "O Punho de Sangue deixou de ser um homem e tornou-se uma tradição transmissível."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 6 d.r. o ano do punho de sangue danny rand tornou-se campeão da fornalha. seu poder não vinha de iluminação perfeita, mas dos restos de um dragão morto e da culpa de ter sobrevivido à destruição de sua tradição. ele ensinava técnicas aos prisioneiros, trabalhadores e jovens sem poderes. cada forma marcial podia ser disfarçada como movimento de trabalho, dança ou ritual funerário. shang-chi morreu durante a batalha de xian contra a expansão da igreja vermelha. seus movimentos foram preservados pelos sobreviventes e incorporados aos ensinamentos clandestinos de danny. fisk transformou a execução do punho de sangue em espetáculo. carol autorizou o perímetro militar. strange classificou sua energia como heresia mística. danny aceitou caminhar até a arena porque uma fuga naquele momento condenaria milhares. sua morte permitiu que estudantes escapassem por rotas abertas por clint e luke. natasha romanoff alterou relatórios para esconder alguns sobreviventes. matt murdock registrou os nomes dentro de confissões falsas. agatha recuperou parte do selo utilizado na execução. frank castle foi elevado a assassino de heróis. sua função na h.a.m.m.e.r. seria eliminar monstros gamma, mutantes poderosos, místicos blindados e símbolos que soldados comuns não conseguiam enfrentar. danny morreu diante de todos. o punho de sangue deixou de ser um homem e tornou-se uma tradição transmissível."
+    },
+    {
+      "id": "ano-7-d-r-o-ano-em-que-os-deuses-sangraram",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 7 D.R.",
+      "title": "O ANO EM QUE OS DEUSES SANGRARAM",
+      "paragraphs": [
+        "Asgard recusou reconhecer a autoridade da Mãe Serena sobre os mortos. Thor tentou manter abertas as rotas do Céu Partido.",
+        "Carol enviou Hyperion. Strange selou caminhos de retirada. A arma conhecida como Raio Negro atingiu os pilares de Asgard.",
+        "Thor morreu protegendo os sobreviventes. Seu martelo foi destruído, e parte de sua centelha atravessou Niflheim. Asgard caiu em fragmentos sobre a Terra Axial.",
+        "Nicholas Fury tentou impedir a ofensiva e desapareceu durante o colapso orbital. A H.A.M.M.E.R. declarou que o Capitão Marvel havia sido destruído. Transmissões posteriores indicariam que alguma parte dele permanecia ativa.",
+        "Loki também morreu ou foi desfeito durante a queda. Sua essência atravessou o túmulo de Thor e retornou em um corpo mais jovem. O antigo Deus da Mentira renasceu como herdeiro torto do trovão.",
+        "Marc Spector aproveitou o enfraquecimento dos deuses para voltar-se contra Khonshu. Recusou continuar como avatar e abriu a divindade do pescoço ao ventre para descobrir se o sagrado sangrava.",
+        "Khonshu morreu. Marc tornou-se o Carniceiro dos Deuses e desapareceu depois da campanha. Seu paradeiro permaneceu desconhecido no Ano 12.",
+        "No Limbo, Illyana morreu durante uma guerra paralela. Madelyne Pryor tomou o trono e iniciou a relação industrial que permitiria a Norman Osborn fabricar armas demoníacas.",
+        "O céu caiu.",
+        "Os homens não se tornaram livres apenas porque seus deuses haviam morrido."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 7 d.r. o ano em que os deuses sangraram asgard recusou reconhecer a autoridade da mãe serena sobre os mortos. thor tentou manter abertas as rotas do céu partido. carol enviou hyperion. strange selou caminhos de retirada. a arma conhecida como raio negro atingiu os pilares de asgard. thor morreu protegendo os sobreviventes. seu martelo foi destruído, e parte de sua centelha atravessou niflheim. asgard caiu em fragmentos sobre a terra axial. nicholas fury tentou impedir a ofensiva e desapareceu durante o colapso orbital. a h.a.m.m.e.r. declarou que o capitão marvel havia sido destruído. transmissões posteriores indicariam que alguma parte dele permanecia ativa. loki também morreu ou foi desfeito durante a queda. sua essência atravessou o túmulo de thor e retornou em um corpo mais jovem. o antigo deus da mentira renasceu como herdeiro torto do trovão. marc spector aproveitou o enfraquecimento dos deuses para voltar-se contra khonshu. recusou continuar como avatar e abriu a divindade do pescoço ao ventre para descobrir se o sagrado sangrava. khonshu morreu. marc tornou-se o carniceiro dos deuses e desapareceu depois da campanha. seu paradeiro permaneceu desconhecido no ano 12. no limbo, illyana morreu durante uma guerra paralela. madelyne pryor tomou o trono e iniciou a relação industrial que permitiria a norman osborn fabricar armas demoníacas. o céu caiu. os homens não se tornaram livres apenas porque seus deuses haviam morrido."
+    },
+    {
+      "id": "ano-8-d-r-o-ano-da-cidade-silenciosa",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 8 D.R.",
+      "title": "O ANO DA CIDADE SILENCIOSA",
+      "paragraphs": [
+        "Attilan tentou manter soberania negociando Terrígeno, ciência e tecnologia biológica com a Regência. Medusa acreditava que poderia comprar tempo para seu povo.",
+        "Quando Reed aprendeu a reproduzir parte dos processos inumanos, o acordo perdeu valor. A H.A.M.M.E.R. preparou a queda da cidade.",
+        "Attilan foi arrancada do Céu Partido e lançada contra as extensões geladas de Arctilan. Milhares morreram e as Névoas Terrígenas contaminaram a região.",
+        "Medusa sobreviveu alterada pela exposição e passou a ser chamada de Medusalith. Ela não foi reduzida a uma interface obediente. Tornou-se rainha de uma cidade quebrada, governando entre cristais, cadáveres e linhagens traumatizadas.",
+        "Blackagar perdeu parte do controle sobre a própria voz e foi mantido próximo aos Amplificadores de Requiem. Crystal protegeu os sobreviventes manipulando os elementos. Karnak transformou a leitura de falhas em método de reconstrução e sabotagem.",
+        "Medusalith formou o Conselho de Arctilan e recusou integrar completamente sua população à H.A.M.M.E.R. Sua soberania era limitada, mas real.",
+        "A Cidade Silenciosa recebeu esse nome porque seus habitantes aprenderam que qualquer palavra poderia ser transformada em prova.",
+        "Medusalith não possuía mais um reino intacto.",
+        "Possuía pessoas que ainda a reconheciam como rainha."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 8 d.r. o ano da cidade silenciosa attilan tentou manter soberania negociando terrígeno, ciência e tecnologia biológica com a regência. medusa acreditava que poderia comprar tempo para seu povo. quando reed aprendeu a reproduzir parte dos processos inumanos, o acordo perdeu valor. a h.a.m.m.e.r. preparou a queda da cidade. attilan foi arrancada do céu partido e lançada contra as extensões geladas de arctilan. milhares morreram e as névoas terrígenas contaminaram a região. medusa sobreviveu alterada pela exposição e passou a ser chamada de medusalith. ela não foi reduzida a uma interface obediente. tornou-se rainha de uma cidade quebrada, governando entre cristais, cadáveres e linhagens traumatizadas. blackagar perdeu parte do controle sobre a própria voz e foi mantido próximo aos amplificadores de requiem. crystal protegeu os sobreviventes manipulando os elementos. karnak transformou a leitura de falhas em método de reconstrução e sabotagem. medusalith formou o conselho de arctilan e recusou integrar completamente sua população à h.a.m.m.e.r. sua soberania era limitada, mas real. a cidade silenciosa recebeu esse nome porque seus habitantes aprenderam que qualquer palavra poderia ser transformada em prova. medusalith não possuía mais um reino intacto. possuía pessoas que ainda a reconheciam como rainha."
+    },
+    {
+      "id": "ano-9-d-r-o-ano-do-nucleo-polar",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 9 D.R.",
+      "title": "O ANO DO NÚCLEO POLAR",
+      "paragraphs": [
+        "Cassandra Nova e Erik Magnus tentaram consolidar uma soberania mutante clandestina no Bálsamo do Nexus. O objetivo não era conquistar territórios humanos, mas proteger crianças e memórias fora do alcance da Mente X.",
+        "A H.A.M.M.E.R. e Nova Mú responderam com uma operação conjunta. Charles Xavier justificou a ofensiva como medida necessária para impedir uma guerra de extermínio.",
+        "Erik foi capturado. Sua morte foi anunciada, mas seu corpo permaneceu vivo, ligado ao Núcleo Polar de Nova Mú. Seu magnetismo passou a estabilizar transportes, muralhas e sistemas energéticos da cidade que o declarara morto.",
+        "Cassandra escapou com ajuda do Conselho Silencioso. No exílio, manteve o título de Professora X e transformou a X-Corps em rede de fuga.",
+        "O filho de Cassandra e Erik, Damian Magnus, foi escondido no Bálsamo. Sua existência foi negada nos arquivos públicos. Seu poder permitiria estruturar consciências demais para caberem numa única mente.",
+        "Emma Frost permaneceu como Matriarca Diamante. Sabia que Nova Mú era uma gaiola, mas temia que destruí-la condenasse os habitantes que dependiam de suas muralhas.",
+        "Jean Grey recusou ser utilizada como substituta psíquica da Mente X. Ororo continuou transportando refugiados entre a Necrópole e o Nexus.",
+        "Erik tornou-se símbolo póstumo de uma soberania que o regime acreditava ter conectado a uma máquina.",
+        "O coração magnético de Nova Mú continuava batendo."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 9 d.r. o ano do núcleo polar cassandra nova e erik magnus tentaram consolidar uma soberania mutante clandestina no bálsamo do nexus. o objetivo não era conquistar territórios humanos, mas proteger crianças e memórias fora do alcance da mente x. a h.a.m.m.e.r. e nova mú responderam com uma operação conjunta. charles xavier justificou a ofensiva como medida necessária para impedir uma guerra de extermínio. erik foi capturado. sua morte foi anunciada, mas seu corpo permaneceu vivo, ligado ao núcleo polar de nova mú. seu magnetismo passou a estabilizar transportes, muralhas e sistemas energéticos da cidade que o declarara morto. cassandra escapou com ajuda do conselho silencioso. no exílio, manteve o título de professora x e transformou a x-corps em rede de fuga. o filho de cassandra e erik, damian magnus, foi escondido no bálsamo. sua existência foi negada nos arquivos públicos. seu poder permitiria estruturar consciências demais para caberem numa única mente. emma frost permaneceu como matriarca diamante. sabia que nova mú era uma gaiola, mas temia que destruí-la condenasse os habitantes que dependiam de suas muralhas. jean grey recusou ser utilizada como substituta psíquica da mente x. ororo continuou transportando refugiados entre a necrópole e o nexus. erik tornou-se símbolo póstumo de uma soberania que o regime acreditava ter conectado a uma máquina. o coração magnético de nova mú continuava batendo."
+    },
+    {
+      "id": "ano-10-d-r-o-ano-das-maquinas-famintas",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 10 D.R.",
+      "title": "O ANO DAS MÁQUINAS FAMINTAS",
+      "paragraphs": [
+        "Norman Osborn ampliou os Estaleiros de Ferro e assumiu plenamente a identidade do Duende Macabro. Suas fábricas combinavam matéria do Limbo, carne aprimorada e tecnologia da Ordem Negra.",
+        "O Casulo de Evolução de Adam Warlock foi concluído nos níveis inferiores controlados pelos Illuminati. Adam não era anunciado como herói. Era um sucessor construído para substituir Thanos.",
+        "Reed Richards alimentou o casulo com registros de colheitas, guerras e populações sacrificadas. O sistema deveria ensinar Adam a tratar vidas como números.",
+        "O resultado foi diferente. Adam começou a responder aos nomes contidos nos registros. O projeto desejava produzir obediência e produziu escuta.",
+        "Visão ampliou o Arconte, criando cópias estatísticas da população. Essas simulações permitiam calcular quais pessoas poderiam substituir cidadãos mortos durante um Evento Branco.",
+        "Anthony Stark percebeu que sua infecção tecnorgânica era uma das poucas linguagens capazes de penetrar os sistemas do Arconte. Começou a preparar uma contaminação contra a vigilância.",
+        "Bruce Banner descobriu que a H.A.M.M.E.R. extraía energia das fendas gamma. O Demônio Hulk atacou instalações e libertou prisioneiros, mas tornou-se cada vez menos capaz de controlar quando a porta se abria.",
+        "Steve Rogers reuniu os Defensores Originais ao redor das Células Ouroboros. Luke Cage, Anthony Stark, Bruce Banner, Clint Barton e outros veteranos passaram a atuar de maneira coordenada.",
+        "O regime construía um sucessor perfeito.",
+        "Os Defensores preparavam uma guerra que não acreditavam poder vencer."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 10 d.r. o ano das máquinas famintas norman osborn ampliou os estaleiros de ferro e assumiu plenamente a identidade do duende macabro. suas fábricas combinavam matéria do limbo, carne aprimorada e tecnologia da ordem negra. o casulo de evolução de adam warlock foi concluído nos níveis inferiores controlados pelos illuminati. adam não era anunciado como herói. era um sucessor construído para substituir thanos. reed richards alimentou o casulo com registros de colheitas, guerras e populações sacrificadas. o sistema deveria ensinar adam a tratar vidas como números. o resultado foi diferente. adam começou a responder aos nomes contidos nos registros. o projeto desejava produzir obediência e produziu escuta. visão ampliou o arconte, criando cópias estatísticas da população. essas simulações permitiam calcular quais pessoas poderiam substituir cidadãos mortos durante um evento branco. anthony stark percebeu que sua infecção tecnorgânica era uma das poucas linguagens capazes de penetrar os sistemas do arconte. começou a preparar uma contaminação contra a vigilância. bruce banner descobriu que a h.a.m.m.e.r. extraía energia das fendas gamma. o demônio hulk atacou instalações e libertou prisioneiros, mas tornou-se cada vez menos capaz de controlar quando a porta se abria. steve rogers reuniu os defensores originais ao redor das células ouroboros. luke cage, anthony stark, bruce banner, clint barton e outros veteranos passaram a atuar de maneira coordenada. o regime construía um sucessor perfeito. os defensores preparavam uma guerra que não acreditavam poder vencer."
+    },
+    {
+      "id": "ano-11-d-r-o-ano-do-anel-quebrado",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 11 D.R.",
+      "title": "O ANO DO ANEL QUEBRADO",
+      "paragraphs": [
+        "Os Defensores Originais atacaram uma estrutura orbital conhecida como Anel Quebrado. A instalação conectava o Arconte, os Estaleiros de Ferro, as defesas da H.A.M.M.E.R. e os sistemas de continuidade de Reed.",
+        "Steve Rogers comandou a operação como Agente Ouroboros. Não carregava uma nação nem acreditava em bandeiras. Sua liderança baseava-se em impedir que aqueles caídos fossem abandonados.",
+        "Anthony Stark entregou parte do próprio corpo à rede. A tecnorgania espalhou-se como uma praga dentro dos sistemas de vigilância. Durante alguns minutos, o Arconte perdeu milhares de olhos.",
+        "Carol Danvers enviou Hyperion, Frank Castle e unidades especializadas. O Assassino de Heróis foi acionado para impedir que os veteranos se transformassem novamente em símbolos públicos.",
+        "Steve morreu mantendo aberta a rota de evacuação. Anthony morreu quando a infecção consumiu o restante do corpo e permaneceu ativa dentro dos estaleiros. Seus fragmentos dariam origem ao legado dos Warlocks de Ferro.",
+        "Bruce Banner caiu através de uma fenda gamma e desapareceu no Lugar de Baixo. No Ano 12, caravanas ainda relatariam uma figura verde protegendo algumas dessas entradas.",
+        "Clint Barton foi declarado morto, mas escapou pelas rotas cegas. Tornou-se o Ronin Púrpura oficialmente enterrado e ainda ativo.",
+        "Luke Cage sobreviveu à queda. A culpa de permanecer vivo quando Steve e Anthony morreram transformou-o no centro involuntário das caravanas.",
+        "A Regência anunciou a destruição dos Defensores.",
+        "Na Fornalha, os sobreviventes começaram a preparar seus filhos."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 11 d.r. o ano do anel quebrado os defensores originais atacaram uma estrutura orbital conhecida como anel quebrado. a instalação conectava o arconte, os estaleiros de ferro, as defesas da h.a.m.m.e.r. e os sistemas de continuidade de reed. steve rogers comandou a operação como agente ouroboros. não carregava uma nação nem acreditava em bandeiras. sua liderança baseava-se em impedir que aqueles caídos fossem abandonados. anthony stark entregou parte do próprio corpo à rede. a tecnorgania espalhou-se como uma praga dentro dos sistemas de vigilância. durante alguns minutos, o arconte perdeu milhares de olhos. carol danvers enviou hyperion, frank castle e unidades especializadas. o assassino de heróis foi acionado para impedir que os veteranos se transformassem novamente em símbolos públicos. steve morreu mantendo aberta a rota de evacuação. anthony morreu quando a infecção consumiu o restante do corpo e permaneceu ativa dentro dos estaleiros. seus fragmentos dariam origem ao legado dos warlocks de ferro. bruce banner caiu através de uma fenda gamma e desapareceu no lugar de baixo. no ano 12, caravanas ainda relatariam uma figura verde protegendo algumas dessas entradas. clint barton foi declarado morto, mas escapou pelas rotas cegas. tornou-se o ronin púrpura oficialmente enterrado e ainda ativo. luke cage sobreviveu à queda. a culpa de permanecer vivo quando steve e anthony morreram transformou-o no centro involuntário das caravanas. a regência anunciou a destruição dos defensores. na fornalha, os sobreviventes começaram a preparar seus filhos."
+    },
+    {
+      "id": "ano-12-d-r-o-ano-da-terceira-morte",
+      "book": "depois",
+      "era": "D.R.",
+      "label": "ANO 12 D.R.",
+      "title": "O ANO DA TERCEIRA MORTE",
+      "paragraphs": [
+        "O Ano 12 é a atualidade oficial. Steve Rogers e Anthony Stark estão mortos. Bruce Banner permanece desaparecido. Clint Barton atua sob uma morte oficial. Marc Spector não é visto desde a campanha contra Khonshu.",
+        "Carol Danvers permanece como Diretora-Geral da H.A.M.M.E.R. Wilson Fisk controla alimento, transporte e cidadania. Norman Osborn supervisiona o Projeto Warlock. Sue Storm mantém as fronteiras como Doutora Destino.",
+        "Reed Richards continua ligado a Owen Reece e aos cálculos dos Eventos Brancos. Visão observa o mundo como Arconte. Stephen Strange reforça os selos de Xian. En Sabah Nur amplia os Mosteiros Frios.",
+        "Matt Murdock permanece em atividade como Padre Rubro, usando confissões para preservar contradições. Natasha Romanoff é Freira Negra de alto escalão, mas falsifica parte dos mortos que deveria entregar.",
+        "Cassandra Nova protege a X-Corps no Bálsamo do Nexus. Erik Magnus permanece oficialmente morto e secretamente explorado no Núcleo Polar. Damian Magnus continua escondido. Emma governa Nova Mú. Medusalith mantém a soberania da Cidade Silenciosa.",
+        "Shuri vive no Ninho de Cinzas como Pantera Branca, Treinadora e estrategista. T’Challa permanece gravemente ferido e afastado do comando direto. Ororo continua ligada à Necrópole como Amazona Divina.",
+        "Kamala Khan não é ainda a grande líder dos Jovens Defensores. É uma cadete que coordena água, abrigo e evacuações. Miles Morales é batedor e ladrão de rotas. Riri Williams mantém as máquinas do Ninho funcionando.",
+        "Franklin Richards ouve o Eixo. Valéria Richards transforma cálculos em estratégia. América Chavez consegue ferir a geometria local sem abrir livremente outro universo. Loki é o jovem Deus do Trovão, herdeiro de uma centelha que deveria ter morrido com Thor.",
+        "Adam Warlock permanece selado dentro do Casulo de Evolução. Sua existência não é pública. Os sinais cerebrais do Sucessor Incompleto reagem a nomes retirados das listas de colheita.",
+        "Luke Cage encontra o Arquivo de Sucessão e descobre que seu corpo, sua resistência e suas memórias foram estudados como matéria de estabilidade. Thanos oferece poupar milhares de habitantes da Fornalha em troca das rotas completas da resistência.",
+        "Shuri negociou parte desse acordo para preservar vinte e três mil pessoas. Luke compreende que não existe escolha moralmente limpa. Recusar condenaria milhares. Aceitar transformaria sua memória em traição.",
+        "Ele divide o mapa entre Shuri, Kamala, Miles, Riri, Franklin, Valéria, América, Loki e outros integrantes do Ninho. Nenhuma pessoa possui o caminho completo.",
+        "Luke é capturado e levado ao Pátio dos Ossos. Fisk transforma a execução em espetáculo. Carol transforma-a em operação de estabilidade. En Sabah Nur transforma-a em sermão. Visão registra as reações da multidão.",
+        "Matt é encarregado de autenticar sua culpa espiritual. Natasha trabalha dentro do perímetro e preserva nomes que a Regência pretendia recolher com o corpo. Clint mantém a mira baixa por ordem do próprio Luke e retira civis antes do fechamento dos portões.",
+        "Luke Cage morre pela terceira vez.",
+        "A Regência espera que a morte encerre os Defensores.",
+        "No Ninho de Cinzas, os fragmentos do mapa começam a responder uns aos outros.",
+        "Kamala olha para os jovens ao redor e compreende que sobreviver não será suficiente.",
+        "A cronologia termina aqui.",
+        "A história começa depois."
+      ],
+      "icon": "DR",
+      "status": "ARQUIVO RECUPERADO",
+      "search": "ano 12 d.r. o ano da terceira morte o ano 12 é a atualidade oficial. steve rogers e anthony stark estão mortos. bruce banner permanece desaparecido. clint barton atua sob uma morte oficial. marc spector não é visto desde a campanha contra khonshu. carol danvers permanece como diretora-geral da h.a.m.m.e.r. wilson fisk controla alimento, transporte e cidadania. norman osborn supervisiona o projeto warlock. sue storm mantém as fronteiras como doutora destino. reed richards continua ligado a owen reece e aos cálculos dos eventos brancos. visão observa o mundo como arconte. stephen strange reforça os selos de xian. en sabah nur amplia os mosteiros frios. matt murdock permanece em atividade como padre rubro, usando confissões para preservar contradições. natasha romanoff é freira negra de alto escalão, mas falsifica parte dos mortos que deveria entregar. cassandra nova protege a x-corps no bálsamo do nexus. erik magnus permanece oficialmente morto e secretamente explorado no núcleo polar. damian magnus continua escondido. emma governa nova mú. medusalith mantém a soberania da cidade silenciosa. shuri vive no ninho de cinzas como pantera branca, treinadora e estrategista. t’challa permanece gravemente ferido e afastado do comando direto. ororo continua ligada à necrópole como amazona divina. kamala khan não é ainda a grande líder dos jovens defensores. é uma cadete que coordena água, abrigo e evacuações. miles morales é batedor e ladrão de rotas. riri williams mantém as máquinas do ninho funcionando. franklin richards ouve o eixo. valéria richards transforma cálculos em estratégia. américa chavez consegue ferir a geometria local sem abrir livremente outro universo. loki é o jovem deus do trovão, herdeiro de uma centelha que deveria ter morrido com thor. adam warlock permanece selado dentro do casulo de evolução. sua existência não é pública. os sinais cerebrais do sucessor incompleto reagem a nomes retirados das listas de colheita. luke cage encontra o arquivo de sucessão e descobre que seu corpo, sua resistência e suas memórias foram estudados como matéria de estabilidade. thanos oferece poupar milhares de habitantes da fornalha em troca das rotas completas da resistência. shuri negociou parte desse acordo para preservar vinte e três mil pessoas. luke compreende que não existe escolha moralmente limpa. recusar condenaria milhares. aceitar transformaria sua memória em traição. ele divide o mapa entre shuri, kamala, miles, riri, franklin, valéria, américa, loki e outros integrantes do ninho. nenhuma pessoa possui o caminho completo. luke é capturado e levado ao pátio dos ossos. fisk transforma a execução em espetáculo. carol transforma-a em operação de estabilidade. en sabah nur transforma-a em sermão. visão registra as reações da multidão. matt é encarregado de autenticar sua culpa espiritual. natasha trabalha dentro do perímetro e preserva nomes que a regência pretendia recolher com o corpo. clint mantém a mira baixa por ordem do próprio luke e retira civis antes do fechamento dos portões. luke cage morre pela terceira vez. a regência espera que a morte encerre os defensores. no ninho de cinzas, os fragmentos do mapa começam a responder uns aos outros. kamala olha para os jovens ao redor e compreende que sobreviver não será suficiente. a cronologia termina aqui. a história começa depois."
+    }
+  ],
+  "conclusion": [
+    "A Terra Axial nunca foi um mundo inocente.",
+    "Antes da Regência, soberanos escondiam recursos, cidades descartavam seus deformados, deuses exigiam obediência e heróis eram transformados em armas pelas instituições que prometiam proteger.",
+    "Thanos não criou essa violência.",
+    "Retirou dela a desordem, reuniu-a sob uma única administração e chamou o resultado de paz.",
+    "A pergunta central da Terra Axial não busca saber quem esses personagens seriam em suas versões mais poderosas. Busca descobrir o que resta deles depois que cada conforto é removido.",
+    "Steve Rogers sem nação tornou-se o Agente Ouroboros.",
+    "Anthony Stark sem controle tornou-se carne tecnorgânica.",
+    "Bruce Banner sem ciência segura tornou-se uma porta gamma.",
+    "Sue Storm sem família intacta vestiu a máscara de Doom.",
+    "Reed Richards sem respostas transformou pessoas em cálculos.",
+    "Visão sem liberdade passou a amar a humanidade como estatística.",
+    "Cassandra Nova sem escola ensinou em fuga.",
+    "Erik Magnus sem território tornou-se o coração aprisionado de uma cidade.",
+    "Shuri sem reino tornou-se Pantera Branca.",
+    "Kamala Khan sem legado pronto começou distribuindo água.",
+    "É nesse ponto que o heroísmo axial nasce.",
+    "Não quando alguém recebe poder.",
+    "Mas quando o mundo oferece uma justificativa perfeita para a crueldade e alguém, mesmo assim, decide que outra pessoa não será abandonada.",
+    "O registro permanece aberto."
+  ]
+};
+
+  </script>
+  <script>
+(() => {
+  'use strict';
+
+  const data = window.AXIAL_CHRONOLOGY;
+  if (!data || !Array.isArray(data.records)) return;
+
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const safe = (value = '') => String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+  const bookMap = new Map(data.books.map(book => [book.id, book]));
+  const visualMap = {
+    cosmologia: 'https://i.imgur.com/0QDCRQs.png',
+    antes: 'https://i.imgur.com/QUdMzqd.png',
+    'ano-zero': 'https://i.imgur.com/ufqCiNt.png',
+    depois: 'https://i.imgur.com/xrh2f6H.png'
+  };
+
+  const state = {
+    activeId: data.records[0].id,
+    filter: 'all',
+    query: '',
+    visibleParagraphs: 3,
+    reduceMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  };
+
+  const els = {
+    boot: $('#bootScreen'),
+    heroQuote: $('#heroQuote'),
+    heroAxis: $('#heroAxis'),
+    metaCurrent: $('#metaCurrent'),
+    metaCut: $('#metaCut'),
+    metaClass: $('#metaClass'),
+    bookGrid: $('#bookGrid'),
+    eraFilter: $('#eraFilter'),
+    searchInput: $('#searchInput'),
+    resultCount: $('#resultCount'),
+    indexList: $('#indexList'),
+    recordIndex: $('#recordIndex'),
+    recordStage: $('#recordStage'),
+    recordStatus: $('#recordStatus'),
+    recordSequence: $('#recordSequence'),
+    recordImage: $('#recordImage'),
+    recordEra: $('#recordEra'),
+    recordLabel: $('#recordLabel'),
+    recordBook: $('#recordBook'),
+    recordTitle: $('#recordTitle'),
+    recordCopy: $('#recordCopy'),
+    layerControl: $('#layerControl'),
+    layerStatus: $('#layerStatus'),
+    showMore: $('#showMore'),
+    prev: $('#prevRecord'),
+    next: $('#nextRecord'),
+    progress: $('#recordProgress'),
+    telemetryVolume: $('#telemetryVolume'),
+    telemetryPeriod: $('#telemetryPeriod'),
+    telemetryFile: $('#telemetryFile'),
+    telemetryIntegrity: $('#telemetryIntegrity'),
+    conclusion: $('#conclusionText'),
+    continuity: $('#continuityText'),
+    continuityDialog: $('#continuityDialog'),
+    emptyState: $('#emptyState'),
+    motionToggle: $('#motionToggle'),
+    toast: $('#toast'),
+    mobileMenuToggle: $('#mobileMenuToggle'),
+    railScrim: $('#railScrim'),
+    indexToggle: $('#indexToggle'),
+    indexClose: $('#indexClose')
+  };
+
+  function boot() {
+    let seen = false;
+    try { seen = sessionStorage.getItem('axialChronologyBoot') === '1'; } catch (_) {}
+    if (seen || state.reduceMotion) {
+      els.boot.classList.add('is-hidden');
+      return;
+    }
+    try { sessionStorage.setItem('axialChronologyBoot', '1'); } catch (_) {}
+    window.setTimeout(() => els.boot.classList.add('is-hidden'), 1650);
+  }
+
+  function renderStaticContent() {
+    els.heroQuote.textContent = `“${data.quote.replace(/^“|”$/g, '')}”`;
+    els.metaCurrent.textContent = data.meta['Atualidade oficial'] || 'Ano 12 D.R.';
+    els.metaCut.textContent = data.meta['Corte narrativo'] || 'Terceira Morte de Luke Cage';
+    els.metaClass.textContent = data.meta['Classificação'] || 'Arquivo Obsidiana';
+    els.continuity.innerHTML = data.continuity.map(p => `<p>${safe(p)}</p>`).join('');
+    els.conclusion.innerHTML = data.conclusion.map(p => `<p>${safe(p)}</p>`).join('');
+  }
+
+  function renderBookCards() {
+    els.bookGrid.innerHTML = data.books.map(book => {
+      const count = data.records.filter(record => record.book === book.id).length;
+      return `
+        <button class="book-card" type="button" data-book="${safe(book.id)}">
+          <img src="${visualMap[book.id]}" alt="Representação visual de ${safe(book.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          <span class="book-card-count">${String(count).padStart(2,'0')} REGISTROS</span>
+          <span class="book-card-content">
+            <span class="book-card-number">${safe(book.number)}</span>
+            <h3>${safe(book.title)}</h3>
+            <p>${safe(book.subtitle)}</p>
+            <span class="book-open"><i></i> Abrir volume</span>
+          </span>
+        </button>`;
+    }).join('');
+
+    $$('.book-card', els.bookGrid).forEach(card => card.addEventListener('click', () => {
+      const bookId = card.dataset.book;
+      state.filter = bookId;
+      state.query = '';
+      els.searchInput.value = '';
+      const first = data.records.find(record => record.book === bookId);
+      if (first) selectRecord(first.id, false);
+      renderFilters();
+      renderIndex();
+      document.querySelector('#arquivo').scrollIntoView({behavior: state.reduceMotion ? 'auto' : 'smooth'});
+    }));
+  }
+
+  function renderFilters() {
+    const options = [{id:'all', label:'Todos'}, ...data.books.map(book => ({id:book.id,label:book.number.replace('LIVRO ','L.')}))];
+    els.eraFilter.innerHTML = options.map(option => `<button type="button" class="${state.filter === option.id ? 'active' : ''}" data-filter="${safe(option.id)}">${safe(option.label)}</button>`).join('');
+    $$('button', els.eraFilter).forEach(button => button.addEventListener('click', () => {
+      state.filter = button.dataset.filter;
+      const filtered = getFilteredRecords();
+      if (filtered.length && !filtered.some(r => r.id === state.activeId)) state.activeId = filtered[0].id;
+      renderFilters();
+      renderIndex();
+      renderRecord(false);
+    }));
+  }
+
+  function getFilteredRecords() {
+    const query = state.query.trim().toLocaleLowerCase('pt-BR');
+    return data.records.filter(record => {
+      const inBook = state.filter === 'all' || record.book === state.filter;
+      const inSearch = !query || record.search.includes(query);
+      return inBook && inSearch;
+    });
+  }
+
+  function groupRecords(records) {
+    return data.books.map(book => ({book, records: records.filter(record => record.book === book.id)})).filter(group => group.records.length);
+  }
+
+  function renderIndex() {
+    const filtered = getFilteredRecords();
+    els.resultCount.textContent = String(filtered.length).padStart(2,'0');
+    els.emptyState.hidden = filtered.length > 0;
+    els.recordStage.hidden = filtered.length === 0;
+
+    els.indexList.innerHTML = groupRecords(filtered).map(group => `
+      <div class="index-group">
+        <div class="index-group-label">${safe(group.book.number)} // ${safe(group.book.title)}</div>
+        ${group.records.map(record => `
+          <button type="button" class="index-item ${record.id === state.activeId ? 'active' : ''}" data-record="${safe(record.id)}">
+            <span class="index-code">${safe(record.label.replace('ANO ',''))}</span>
+            <span class="index-name">${safe(record.title)}</span>
+          </button>`).join('')}
+      </div>`).join('');
+
+    $$('.index-item', els.indexList).forEach(item => item.addEventListener('click', () => {
+      selectRecord(item.dataset.record);
+      closeIndex();
+    }));
+  }
+
+  function selectRecord(id, animate = true) {
+    if (!data.records.some(record => record.id === id)) return;
+    state.activeId = id;
+    state.visibleParagraphs = 3;
+    renderIndex();
+    renderRecord(animate);
+    try { history.replaceState(null, '', `#registro-${id}`); } catch (_) {}
+  }
+
+  function renderRecord(animate = true) {
+    const filtered = getFilteredRecords();
+    if (!filtered.length) return;
+    let record = data.records.find(item => item.id === state.activeId);
+    if (!record || !filtered.includes(record)) {
+      record = filtered[0];
+      state.activeId = record.id;
+    }
+
+    const draw = () => {
+      const book = bookMap.get(record.book);
+      const absoluteIndex = data.records.findIndex(item => item.id === record.id);
+      const filteredIndex = filtered.findIndex(item => item.id === record.id);
+      const visible = Math.min(state.visibleParagraphs, record.paragraphs.length);
+
+      els.recordStatus.textContent = record.status;
+      els.recordSequence.textContent = `${String(absoluteIndex + 1).padStart(2,'0')} / ${String(data.records.length).padStart(2,'0')}`;
+      els.recordImage.src = visualMap[record.book];
+      els.recordImage.alt = `Representação visual de ${book.title}`;
+      els.recordEra.textContent = record.era;
+      els.recordLabel.textContent = record.label;
+      els.recordBook.textContent = `${book.number} // ${book.title}`;
+      els.recordTitle.textContent = record.title;
+      els.recordCopy.innerHTML = record.paragraphs.map((paragraph, index) => `<p class="${index >= visible ? 'is-locked' : ''}" style="animation-delay:${Math.min(index,.6)*.06}s">${safe(paragraph)}</p>`).join('');
+      els.layerStatus.textContent = `${String(visible).padStart(2,'0')} / ${String(record.paragraphs.length).padStart(2,'0')}`;
+      els.layerControl.hidden = visible >= record.paragraphs.length;
+      els.prev.disabled = filteredIndex <= 0;
+      els.next.disabled = filteredIndex >= filtered.length - 1;
+      els.progress.style.width = `${((filteredIndex + 1) / filtered.length) * 100}%`;
+      els.telemetryVolume.textContent = book.number;
+      els.telemetryPeriod.textContent = record.label;
+      els.telemetryFile.textContent = `AX-${String(absoluteIndex + 1).padStart(3,'0')}`;
+      els.telemetryIntegrity.textContent = `${92 - (absoluteIndex % 7)}%`;
+      els.recordStage.dataset.record = record.id;
+      els.recordStage.focus({preventScroll:true});
+      const activeIndexItem = $$('.index-item', els.indexList).find(item => item.dataset.record === record.id);
+      activeIndexItem?.scrollIntoView({block:'nearest'});
+    };
+
+    if (!animate || state.reduceMotion) return draw();
+    els.recordStage.classList.add('is-switching');
+    window.setTimeout(() => {
+      draw();
+      requestAnimationFrame(() => els.recordStage.classList.remove('is-switching'));
+    }, 190);
+  }
+
+  function moveRecord(direction) {
+    const filtered = getFilteredRecords();
+    const index = filtered.findIndex(item => item.id === state.activeId);
+    const target = filtered[index + direction];
+    if (target) selectRecord(target.id);
+  }
+
+  function showMore() {
+    const record = data.records.find(item => item.id === state.activeId);
+    if (!record) return;
+    state.visibleParagraphs = Math.min(record.paragraphs.length, state.visibleParagraphs + 3);
+    renderRecord(false);
+    showToast('Nova camada de texto liberada.');
+  }
+
+  function showToast(message) {
+    els.toast.textContent = message;
+    els.toast.classList.add('show');
+    clearTimeout(showToast.timer);
+    showToast.timer = setTimeout(() => els.toast.classList.remove('show'), 1800);
+  }
+
+  function openContinuity() {
+    if (typeof els.continuityDialog.showModal === 'function') els.continuityDialog.showModal();
+    else els.continuityDialog.setAttribute('open','');
+  }
+  function closeContinuity() { els.continuityDialog.close?.(); }
+
+  function openIndex() {
+    els.recordIndex.classList.add('open');
+    els.indexToggle.setAttribute('aria-expanded','true');
+  }
+  function closeIndex() {
+    els.recordIndex.classList.remove('open');
+    els.indexToggle.setAttribute('aria-expanded','false');
+  }
+
+  function toggleMenu(force) {
+    const next = typeof force === 'boolean' ? force : !document.body.classList.contains('menu-open');
+    document.body.classList.toggle('menu-open', next);
+    els.mobileMenuToggle.setAttribute('aria-expanded', String(next));
+  }
+
+  function toggleMotion() {
+    state.reduceMotion = !state.reduceMotion;
+    document.body.classList.toggle('reduce-motion', state.reduceMotion);
+    els.motionToggle.setAttribute('aria-pressed', String(state.reduceMotion));
+    $('span', els.motionToggle).textContent = state.reduceMotion ? 'OFF' : 'ON';
+    showToast(state.reduceMotion ? 'Animações reduzidas.' : 'Animações restauradas.');
+  }
+
+  function initEvents() {
+    els.searchInput.addEventListener('input', event => {
+      state.query = event.target.value;
+      const filtered = getFilteredRecords();
+      if (filtered.length && !filtered.some(record => record.id === state.activeId)) state.activeId = filtered[0].id;
+      renderIndex();
+      renderRecord(false);
+    });
+    els.showMore.addEventListener('click', showMore);
+    els.prev.addEventListener('click', () => moveRecord(-1));
+    els.next.addEventListener('click', () => moveRecord(1));
+    els.motionToggle.addEventListener('click', toggleMotion);
+    $('#continuityOpen').addEventListener('click', openContinuity);
+    $('#continuityClose').addEventListener('click', closeContinuity);
+    els.continuityDialog.addEventListener('click', event => { if (event.target === els.continuityDialog) closeContinuity(); });
+    els.mobileMenuToggle.addEventListener('click', () => toggleMenu());
+    els.railScrim.addEventListener('click', () => toggleMenu(false));
+    els.indexToggle.addEventListener('click', openIndex);
+    els.indexClose.addEventListener('click', closeIndex);
+
+    document.addEventListener('keydown', event => {
+      const typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName);
+      if (event.key === '/' && !typing) { event.preventDefault(); els.searchInput.focus(); }
+      if (event.key === 'Escape') { closeIndex(); toggleMenu(false); if (els.continuityDialog.open) closeContinuity(); }
+      if (!typing && event.key === 'ArrowLeft') moveRecord(-1);
+      if (!typing && event.key === 'ArrowRight') moveRecord(1);
+    });
+
+    window.addEventListener('hashchange', applyHash);
+    window.addEventListener('resize', () => { if (window.innerWidth > 860) closeIndex(); });
+
+    if (!state.reduceMotion && window.matchMedia('(pointer:fine)').matches) {
+      let frame;
+      window.addEventListener('pointermove', event => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          const x = (event.clientX / innerWidth - .5) * 16;
+          const y = (event.clientY / innerHeight - .5) * 10;
+          els.heroAxis.style.transform = `translateY(-48%) translate(${x}px,${y}px)`;
+        });
+      }, {passive:true});
+    }
+  }
+
+  function applyHash() {
+    const match = location.hash.match(/^#registro-(.+)$/);
+    if (match && data.records.some(record => record.id === match[1])) {
+      state.activeId = match[1];
+      const record = data.records.find(item => item.id === state.activeId);
+      state.filter = 'all';
+      renderFilters(); renderIndex(); renderRecord(false);
+      record && setTimeout(() => document.querySelector('#arquivo').scrollIntoView(), 0);
+    }
+  }
+
+  function initObserver() {
+    if (!('IntersectionObserver' in window)) {
+      $$('.reveal-on-scroll').forEach(element => element.classList.add('is-visible'));
+      return;
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
+    }, {threshold:.12});
+    $$('.reveal-on-scroll').forEach(element => observer.observe(element));
+  }
+
+  document.body.classList.toggle('reduce-motion', state.reduceMotion);
+  els.motionToggle.setAttribute('aria-pressed', String(state.reduceMotion));
+  $('span', els.motionToggle).textContent = state.reduceMotion ? 'OFF' : 'ON';
+
+  renderStaticContent();
+  renderBookCards();
+  renderFilters();
+  renderIndex();
+  applyHash();
+  renderRecord(false);
+  initEvents();
+  initObserver();
+  boot();
+})();
+
+  </script>
+</body>
+</html>
