@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#09090a"/><stop offset=".55" stop-color="#08080a"/><stop offset="1" stop-color="#a00024" stop-opacity=".42"/></linearGradient>
+  <radialGradient id="r"><stop stop-color="#ff234f" stop-opacity=".28"/><stop offset=".5" stop-color="#a00024" stop-opacity=".08"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#a00024" stroke-opacity=".13"/></pattern>
+  <pattern id="scan" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 5.5H6" stroke="#000" stroke-opacity=".28"/></pattern>
+</defs>
+<rect width="1600" height="1000" fill="url(#g)"/><rect width="1600" height="1000" fill="url(#grid)"/>
+<circle cx="1120" cy="440" r="510" fill="url(#r)"/>
+<g fill="none" stroke="#a00024" opacity=".55">
+  <circle cx="1120" cy="440" r="320"/><circle cx="1120" cy="440" r="245" stroke-dasharray="18 20"/><circle cx="1120" cy="440" r="130"/>
+  <path d="M1120 70V810M750 440H1490M858 178l524 524M1382 178L858 702" opacity=".35"/>
+</g>
+<g filter="url(#glow)" fill="#ff234f"><circle cx="1120" cy="120" r="6"/><circle cx="1375" cy="438" r="5"/><circle cx="1038" cy="684" r="4"/></g>
+<g transform="translate(100 165)">
+  <path d="M0 0H520L590 70V370L530 430H0Z" fill="#050507" fill-opacity=".42" stroke="#a00024" stroke-opacity=".4"/>
+  <text x="42" y="92" fill="#ff234f" font-family="monospace" font-size="24" letter-spacing="8">LIVRO // III</text>
+  <text x="38" y="200" fill="#f4edef" font-family="Impact, sans-serif" font-size="86" letter-spacing="3">ANO ZERO</text>
+  <path d="M42 248H420" stroke="#ff234f" stroke-width="3"/><path d="M42 274H290" stroke="#a00024" stroke-width="1"/>
+  <text x="42" y="336" fill="#85777b" font-family="monospace" font-size="18" letter-spacing="4">ARQUIVO AXIAL // ACESSO VIOLADO</text>
+</g>
+<rect width="1600" height="1000" fill="url(#scan)" opacity=".55"/>
+<path d="M0 948H1230L1280 998H0Z" fill="#a00024" fill-opacity=".18"/>
+</svg>
